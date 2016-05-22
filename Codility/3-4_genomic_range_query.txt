@@ -1,0 +1,60 @@
+Name: Genomic Range Query
+Level: Medium
+Chapter: 3
+Complexity: O(n+m)
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    
+    public int value(char c) {
+        if (c == 'A') return 1;
+        if (c == 'C') return 2;
+        if (c == 'G') return 3;
+        if (c == 'T') return 4;
+        return -1; // error condition
+    }
+    
+    public int[] solution(string S, int[] P, int[] Q) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int N = S.Length;
+        int M = P.Length;
+        int[] result = new int[M];
+        
+        int[,] occurrences = new int[N+1,4];
+        for (int i = 0; i < N; i++) {
+            int index = i+1;
+            
+            for (int j = 0; j < 4; j++) {
+                occurrences[index, j] = occurrences[index-1,j];
+            }
+            
+            char c = S[i];
+            int val = value(c)-1;
+            occurrences[index,val]++;
+        }
+            
+        for (int i = 0; i < M; i++) {
+            int min = P[i];
+            int max = Q[i]+1;        
+            
+            for (int j = 0; j < 4; j++) {
+                //Console.WriteLine("Query {0} - testing for j = {1}", i, j);
+                //Console.WriteLine("min = {0}, max = {1}", min, max);
+                //Console.WriteLine("Occs at max: {0}, occs at min: {1}", occurrences[max,j], occurrences[min,j]);
+                if (occurrences[max,j] > occurrences[min,j]) {
+                    result[i] = j+1;
+                    //Console.WriteLine("breaking at j={0}", j);
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+}

@@ -1,0 +1,79 @@
+Name: Min Perimeter Rectangle
+Level: Easy
+Chapter: 8
+Complexity: O(sqrt(n))
+
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int N) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+                
+        int M = (int) Math.Round(Math.Sqrt(N));
+        
+        int best_peri = 2*(N+1);
+        
+        for (int i = 2; i <= M; i++) {
+            if (N % i == 0) {
+                int A = N/i;
+                int peri = 2*(i + A);
+                best_peri = Math.Min(best_peri, peri);
+            }
+        }
+        return best_peri;
+    }
+}
+
+==========================
+
+or, using a bit of calculus to make certain that the best value is around the square root.
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int N) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int M = (int) (Math.Sqrt(N));
+        for (int i = M; i > 1; i--) {
+            if (N % i == 0) {
+                return 2 * (i + N/i);   
+            }
+        }
+        return 2*(1+N);
+    }
+    
+}
+
+P(x) = (A/x + x)*2 = 2(A+x^2)/x
+
+1/2 d/dx P = ( 2x * x - (A+x^2))/x^2 
+	   = 1/x^2 * (2x^2 - A - x^2) 
+	   = 1/x^2 * (x^2 - A)
+
+dP/dx = 0 <=> x^2 = A
+
+
+sign of dP/dx:
+  x^2 > 0
+  x^2 - A 
+
+  zero of first-derivative: x = sqrt(A)
+
+  x < sqrt(A): x^2 - A < 0: decreasing
+  x > sqrt(A): x^2 - A > 0: increasing
+
+  x = sqrt(A) is a minimum of the function
+
+  the minimal perimeter happens as close as possible to here. So, another solution

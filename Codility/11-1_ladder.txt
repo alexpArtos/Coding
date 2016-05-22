@@ -1,0 +1,39 @@
+Name: Ladder
+Level: Medium
+Chapter: 11
+Complexity: O(L)
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int[] solution(int[] A, int[] B) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int L = A.Length;
+        int[] result = new int[L];
+                
+        int[] fib = new int[L+1];
+        fib[0] = 1;
+        fib[1] = 1;
+         int full_mask = 0x7fffffff;
+        
+        int ncomputed = 1;
+        
+        for (int i = 0; i < L; i++) {
+            int query = A[i];
+            for (int j = ncomputed+1; j <= query; j++) {
+                fib[j] = (fib[j-1] + fib[j-2]) & full_mask;
+                ncomputed++;
+            }
+            int mask = (1 << B[i]) - 1;
+            result[i] = fib[query] & mask;
+        }
+        return result;
+    }
+}
+

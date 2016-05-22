@@ -1,0 +1,49 @@
+Name: Max Double Slice Sum
+Level: Medium
+Chapter: 7
+Complexity: O(n)
+
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        int n = A.Length;
+        
+        int[] max_starting = new int[n];
+        int[] max_ending = new int[n];
+            
+        // X can start at 0
+        // slice goes from 1 to Y-1
+        // Z can end at N-1
+        // slice goes from Y+1 to N-2    
+        // I am going to mark slices on Y
+        // slices ending at Y go up to Y-1
+        // slices starting at Y go from Y+1
+        
+        max_ending[0] = 0; //X is at least 0, so nothing can end at 0
+        max_starting[n-1] = 0; //Z is at most n-1, so nothing can start at n-1
+        
+        for (int i = 1; i < n; i++) {
+            max_ending[i] = Math.Max(0, max_ending[i-1] + A[i]);
+        }
+        for (int i = n-2; i >= 1; i--) {
+            max_starting[i] = Math.Max(0, max_starting[i+1] + A[i]);   
+        }
+                
+        int index = 1;        
+        int best_sum = max_ending[index-1] + max_starting[index+1];
+        for (index = 2; index <= n-2; index++) {            
+            int this_sum = max_ending[index-1] + max_starting[index+1];
+            best_sum = Math.Max(best_sum, this_sum);
+        }
+        return best_sum;
+    }
+}
+

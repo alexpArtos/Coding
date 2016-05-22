@@ -1,0 +1,88 @@
+Name: Max Product of Three
+Level: Easy
+Chapter: 4
+Complexity: O(n log n)
+
+using System;
+// you can also use other imports, for example:
+using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int top_positives(List<int> list) {
+        int n = list.Count;
+        return list[n-1] * list[n-2] * list[n-3];
+    }
+    
+    public int top_negatives(List<int> list) {
+        int n = list.Count;
+        return list[n-1] * list[n-2] * list[n-3];   
+    }
+    
+    public int pair_negatives(List<int> list) {
+        int n = list.Count;
+        return list[n-1] * list[0] * list[1];
+    }
+    
+    public int solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int n = A.Length;
+        
+        if (n == 3) {
+            return A[0] * A[1] * A[2];
+        }
+        
+        List<int> list = new List<int>();
+        for (int i = 0; i < n; i++) {
+            list.Add(A[i]);
+        }
+        list.Sort();
+
+        // special cases -----------
+        
+        // all non-negative numbers
+        if (list[0] >= 0) return top_positives(list);
+        
+        // all negative numbers
+        if (list[n-1] < 0) return top_negatives(list);
+        
+        // 1 negative number, at least 3 positives
+        if (list[1] >= 0) return top_positives(list);
+        
+        // 1 positive number, at least 3 negatives
+        if ( (list[n-1] >= 0) && (list[n-2] < 0) ) return pair_negatives(list);
+        
+        // 2 negatives, 2 positives
+        if ( (n == 4) && (list[1] < 0) && (list[2] >= 0) ) 
+            return pair_negatives(list);
+            
+        // ELSE: at least 2 negatives, at least 3 positives
+        if (list[0] * list[1] > list[n-2] * list[n-3]) 
+            return pair_negatives(list);
+        else
+            return top_positives(list);
+    }
+}
+
+================================================================
+
+MUCH BETTER: simplifying this code:
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        int n = A.Length;
+        Array.Sort(A);
+        return Math.Max(A[0] * A[1] * A[n-1], A[n-1] * A[n-2] * A[n-3]);
+    }
+}

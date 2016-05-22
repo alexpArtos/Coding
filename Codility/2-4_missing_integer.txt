@@ -1,0 +1,32 @@
+Name: Missing Integer
+Level: Medium
+Chapter: 2
+Complexity: O(n)
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        int N = A.Length;
+        
+        bool[] present = new bool[N];
+        
+        for (int i = 0; i < N; i++) {
+            if (A[i] < 1) continue;
+            if (A[i] > N) continue;
+            int index = A[i]-1;
+            present[index] = true;
+        }
+        
+        int check = 0;
+        while ( (check < N) && (present[check]) ) check++;
+        if (check >= N) return N+1;
+        return check+1;
+    }
+}
