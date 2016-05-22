@@ -2,6 +2,7 @@ Name: Frog River One
 Level: Easy
 Chapter: 2
 Complexity: O(n)
+https://codility.com/programmers/task/frog_river_one/
 
 using System;
 // you can also use other imports, for example:

@@ -2,7 +2,7 @@ Name: Count Factors
 Level: Easy
 Chapter: 8
 Complexity: O(sqrt(n))
-
+https://codility.com/programmers/task/count_factors/
 
 using System;
 // you can also use other imports, for example:

@@ -2,6 +2,7 @@ Name: Max Product of Three
 Level: Easy
 Chapter: 4
 Complexity: O(n log n)
+https://codility.com/programmers/task/max_product_of_three/
 
 using System;
 // you can also use other imports, for example:

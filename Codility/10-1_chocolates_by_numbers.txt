@@ -2,7 +2,7 @@ Name: Chocolates By Numbers
 Level: Easy
 Chapter: 10
 Complexity: O(log N + M)
-
+https://codility.com/programmers/task/chocolates_by_numbers/
 
 using System;
 // you can also use other imports, for example:

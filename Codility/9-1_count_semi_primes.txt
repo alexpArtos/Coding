@@ -2,7 +2,7 @@ Name: Count Semi Primes
 Level: Easy
 Chapter: 9
 Complexity: O(N log log N + M)
-
+https://codility.com/programmers/task/count_semiprimes/
 
 using System;
 // you can also use other imports, for example:

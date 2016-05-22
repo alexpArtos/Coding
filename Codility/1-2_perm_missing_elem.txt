@@ -2,6 +2,7 @@ Name: Perm Missing Elem
 Level: Easy
 Chapter: 1
 Complexity: O(n)
+https://codility.com/programmers/task/perm_missing_elem/
 
 using System;
 // you can also use other imports, for example:

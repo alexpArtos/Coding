@@ -2,7 +2,7 @@ Name: Count Non Divisible
 Level: Medium
 Chapter: 9
 Complexity: O(n * log n)
-
+https://codility.com/programmers/task/count_non_divisible/
 
 using System;
 // you can also use other imports, for example:

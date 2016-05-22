@@ -2,7 +2,7 @@ Name: Max Double Slice Sum
 Level: Medium
 Chapter: 7
 Complexity: O(n)
-
+https://codility.com/programmers/task/max_double_slice_sum/
 
 using System;
 // you can also use other imports, for example:

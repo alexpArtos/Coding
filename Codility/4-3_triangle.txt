@@ -2,6 +2,8 @@ Name: Triangle
 Level: Easy
 Chapter: 4
 Complexity: O(n log n)
+https://codility.com/programmers/task/triangle/
+
 
 using System;
 // you can also use other imports, for example:

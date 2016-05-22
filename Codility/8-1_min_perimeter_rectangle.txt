@@ -2,7 +2,7 @@ Name: Min Perimeter Rectangle
 Level: Easy
 Chapter: 8
 Complexity: O(sqrt(n))
-
+https://codility.com/programmers/task/min_perimeter_rectangle/
 
 using System;
 // you can also use other imports, for example:

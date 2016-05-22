@@ -1,6 +1,7 @@
 Name: Frog Jmp
 Level: Easy
 Complexity: O(1)
+https://codility.com/programmers/task/frog_jmp/
 
 ---------------------------------------------------------------
 

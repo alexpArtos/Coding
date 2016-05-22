@@ -2,6 +2,7 @@ Name: Fish
 Level: Easy
 Chapter: 5
 Complexity: O(n)
+https://codility.com/programmers/task/fish/
 
 using System;
 // you can also use other imports, for example:

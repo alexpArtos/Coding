@@ -2,6 +2,7 @@ Name: Common Prime Divisors
 Level: Medium
 Chapter: 10
 Complexity: O(Z * log (max(A) + max(B)))^2)
+https://codility.com/programmers/task/common_prime_divisors/
 
 using System;
 // you can also use other imports, for example:

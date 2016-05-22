@@ -2,7 +2,7 @@ Name: Flags
 Level: Hard
 Chapter: 8
 Complexity: O(n)
-
+https://codility.com/programmers/task/flags/
 
 using System;
 // you can also use other imports, for example:

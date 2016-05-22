@@ -2,6 +2,7 @@ Name: Equi Leader
 Level: Easy
 Chapter: 6	
 Complexity: O(n)
+https://codility.com/programmers/task/equi_leader/
 
 using System;
 // you can also use other imports, for example:

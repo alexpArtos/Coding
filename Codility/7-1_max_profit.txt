@@ -2,8 +2,7 @@ Name: Max Profit
 Level: Easy
 Chapter: 7
 Complexity: O(n)
-
-
+https://codility.com/programmers/task/max_profit/
 
 using System;
 // you can also use other imports, for example:

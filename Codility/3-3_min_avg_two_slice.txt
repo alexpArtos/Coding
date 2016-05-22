@@ -2,6 +2,7 @@ Name: Min Avg Two Slice
 Level: Medium
 Chapter: 3
 Complexity: O(n)
+https://codility.com/programmers/task/min_avg_two_slice/
 
 using System;
 // you can also use other imports, for example:

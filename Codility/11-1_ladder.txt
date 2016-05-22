@@ -2,6 +2,7 @@ Name: Ladder
 Level: Medium
 Chapter: 11
 Complexity: O(L)
+https://codility.com/programmers/task/ladder/
 
 using System;
 // you can also use other imports, for example:

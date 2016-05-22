@@ -2,6 +2,7 @@ Name: Tape Equilibrium
 Level: Easy
 Chapter: 1
 Complexity: O(n)
+https://codility.com/programmers/task/tape_equilibrium/
 
 using System;
 // you can also use other imports, for example:

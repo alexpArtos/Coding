@@ -2,7 +2,7 @@ Name: Max Slice
 Level: Easy
 Chapter: 7
 Complexity: O(n)
-
+https://codility.com/programmers/task/max_slice_sum/
 
 using System;
 // you can also use other imports, for example:
