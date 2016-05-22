@@ -1,0 +1,61 @@
+Name: Count Semi Primes
+Level: Easy
+Chapter: 9
+Complexity: O(N log log N + M)
+
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int[] solution(int N, int[] P, int[] Q) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int M = Q.Length;
+        int[] result = new int[M];
+            
+        int[] divs = new int[N+1]; // 0 - unknown; 1 - composite; 2 - semiprime; 3 - seen
+        int[] semi_primes = new int[N+1];
+        
+        for (int i = 0; i < N; i++) {
+            divs[i] = 0;
+        }
+                
+        for (int i = 2; i * 2 <= N; i++) {
+            if (divs[i] == 0) { // number still not tested: 
+                divs[i] = 3;    // must be a prime
+                if (i * i <= N) {
+                    divs[i*i] = 2;   // its square is a semi_prime
+                }
+                for (int j = 2, k = i+i; k <= N; k+=i, j++) {                                     
+                    if (divs[k] == 0) { // first prime divisor, mark as composite
+                        divs[k] = 1;
+                    } else if (divs[k] == 1) { // more than one prime divisor
+                        if (divs[j] == 3) { // if quotient is prime divisor, this is semi_prime
+                            divs[k]=2;   
+                        }
+                    }                    
+                }
+            }
+        }
+                
+        for (int i = 2; i <= N; i++) {
+            if (divs[i] == 2) {
+                semi_primes[i] = semi_primes[i-1]+1;   
+            } else {
+                semi_primes[i] = semi_primes[i-1];
+            }
+        }
+                            
+        for (int i = 0; i < M; i++) {
+            int A = semi_primes[P[i]-1];    
+            int B = semi_primes[Q[i]];
+            result[i] = B-A;
+        }
+        return result;
+    }
+}

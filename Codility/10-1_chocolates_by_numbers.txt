@@ -1,0 +1,49 @@
+Name: Chocolates By Numbers
+Level: Easy
+Chapter: 10
+Complexity: O(log N + M)
+
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int Gcd(int a, int b) {        
+        int max = Math.Max(a,b);
+        int min = Math.Min(a,b);
+        if (max % min == 0) return min;
+        return Gcd(min, max % min);   
+    }
+    
+    public int solution(int N, int M) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int g = Gcd(M,N);        
+        return N/g;
+    }
+}
+
+=========================================
+
+10, 1: mod(10,1) = 0: 1 lap
+10, 2: mod(10,2) = 0: 1 lap
+10, 3: mod(10,3) = 1
+  0,3,6,9,2,5,8,1,4,7,0: 3 laps
+10, 4: mod(10,4) = 2: laps 2
+  0,4,8,2,6,0 
+
+we want lcm(M,N): 
+  - repetition occurs if we reach position 0 for a second time.
+  - if we take k laps to repeat, then we are at position kN
+  - but we reach that in steps of M, so lM
+  
+  we want the first step where this can happen, that is, lcm(M,N)
+  Now, how many cookies do we eat at this step? We divide by M
+  
+  lcm = M*N/gcd
+  final = N/gcd
+  

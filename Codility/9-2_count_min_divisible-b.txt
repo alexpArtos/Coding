@@ -1,0 +1,81 @@
+Name: Count Non Divisible
+Level: Medium
+Chapter: 9
+Complexity: O(n * log n)
+
+
+using System;
+// you can also use other imports, for example:
+using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int[] solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        int n = A.Length;
+        int[] count = new int[2*n+1];
+        
+        Dictionary<int,List<int> > divisors = new Dictionary<int,List<int> >();
+               
+        int M = 0;
+        for (int i = 0; i < n; i++) {
+          int val = A[i];
+          M = Math.Max(M, val);
+          count[val]++;
+          List<int> temp = new List<int>();
+          temp.Add(1);
+          if (val != 1) {
+            temp.Add(val);
+          }
+          divisors[val] = temp;
+        }        
+        
+        int MxDiv = (int) Math.Sqrt(M)+1;
+        bool[] tested_div = new bool[MxDiv];
+        
+        for (int divisor = 2; divisor * divisor <= M; divisor++) {
+	    if (tested_div[divisor]) {
+		continue;
+	    }
+	    tested_div[divisor] = true;
+	    int multiple = divisor*2; // we have already added 1 and n as divisors of all n
+            int factor = 2;
+            while (multiple <= M) {
+              if (!tested_div[multiple]) {
+		tested_div[multiple] = true;
+		foreach (val in divisors.Keys) {
+		  if (multiple == val) {
+		    List<int> temp = divisors[val];
+  //		  if (!temp.Contains(divisor)) {
+		      temp.Add(divisor);
+  //		  }
+		    if (divisor != factor) {
+		      temp.Add(factor);
+		    }
+		  }
+		}
+	      }
+	      multiple += divisor;
+	      factor++;
+	   }
+        }     
+            
+        foreach(int val in divisors.Keys) {
+            List<int> temp = divisors[val];
+        }
+        
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+          int val = A[i];
+          result[i] = n;
+          foreach (int div in divisors[val]) {
+            result[i] -= count[div];
+          }
+        }        
+        return result;
+    }
+}
+
+// when I am certain that this is right and that I don't need to check containment in a divisors list, then I can add the count for that divisor immediately, instead of doing the final loop

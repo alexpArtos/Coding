@@ -1,0 +1,49 @@
+Name: Fish
+Level: Easy
+Chapter: 5
+Complexity: O(n)
+
+using System;
+// you can also use other imports, for example:
+using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A, int[] B) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int n = A.Length;
+        Stack<int> s = new Stack<int>();
+        
+        for (int i = 0; i < n; i++) {
+            bool fish_active = true;
+            int new_fish = i;
+            while (fish_active) {
+                if (s.Count == 0) {
+                    s.Push(new_fish);
+                    fish_active = false;
+                    continue;
+                }
+                int old_fish = s.Peek();                
+                // are they in collision route?
+                if ( (B[old_fish] == 1) && (B[new_fish] == 0) ) {
+                    // who eats whom?
+                    if  (A[old_fish] < A[new_fish]) {
+                        // new fish eats old
+                        s.Pop();
+                    } else {
+                        // else old eats new and nothing changes in the stack
+                        fish_active = false;
+                    }
+                } else {
+                    // fish do not meet, just add the new one to the stack
+                    s.Push(new_fish);
+                    fish_active = false;
+                }   
+            }
+        }   
+        return s.Count;
+    }
+}
