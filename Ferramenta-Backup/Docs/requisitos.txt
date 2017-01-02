@@ -1,0 +1,64 @@
+Requisitos para uma aplicacao de sincronizacao de fotografias:
+
+
+Requisitos nao funcionais:
+	- tem de ser feito em Python, para me dar experiencia nesta linguagem
+	
+	
+Requisitos funcionais:
+	- consegue comparar copias de fotografias em locais diferentes com diferentes hierarquias
+	- compara fotografias com base no seu hash, no nome e na data de modificacao / criacao
+	- modifica fotografias com tags, classificando o seu conteudo, permitindo encontrar fotografias relacionadas independentemente da sua localizacao.
+		* dado que os tags alteram o ficheiro, e consequentemente o seu hash, assim que uma fotografia tiver pelo menos um tag, devera ter tambem outro tag com o seu hash original
+		* a comparacao por hash usa o conteudo do ficheiro se nao existir um tag com hash; mas usa o tag se este ja existir.
+	- o programa compara todas as fotografias em duas localizacoes: origem e destino. Estas sao as accoes possiveis:
+		FALTA CONSIDERAR AQUI O EFEITO DA DATA DA FOTOGRAFIA.
+		AS DATAS TERAO DE SER IGUAIS (com um possivel desfasamento de 1h) PARA OS FICHEIROS SEREM IGUAIS, A NAO SER QUE AS FOTOGRAFIAS JA TENHAM SIDO ALTERADAS COM TAGS. NESTE CASO, A DATA ORIGINAL DEVE TER SIDO GUARDADA COMO UM TAG E DEVE SER USADA EM VEZ DO ATRIBUTO DO FICHEIRO
+		* se a mesma fotografia for encontrada nos dois locais e o seu hash for igual, ignora-la
+		* se uma fotografia com o mesmo nome e tamanho for encontrada nos dois locais, mas o hash for diferente, coloca-la numa lista de conflitos
+		* se uma fotografia com o mesmo nome e tamanho diferente for encontrada, junta-la a lista de conflitos
+		* se uma fotografia existir em apenas um dos locais, junta-la a lista de transferencias
+	- a lista de conflitos 
+		* mostra uma tooltip com o caminho completo para cada uma das versoes da fotografia
+		* permite ao utilizador escolher se quer ignorar o conflito ou adiciona-lo a lista de transferencias
+		* eventualmente: mostrar uma preview de cada fotografia
+	- a lista de transferencias:
+		* esta organizada hierarquicamente por localizacao de origem (em arvore, de preferencia com checkbox em cada item)
+		* so permite transferencia num sentido: origem --> destino
+		* no entanto, a transferencia pode ter dois modos: --> sobrepor a copia anterior, ou manter as duas copias (com nomes diferentes)	
+		* tem uma checkbox para decidir individualmente quais transferencias executar
+		* a checkbox num directorio permite seleccionar ou invalidar todos os itens dentro desse directorio com um so click
+	- as fotografias sao identificaveis unicamente independentemente do sitio onde estao localizadas:
+		* esta identificao e feita atraves dos tags de fotografia
+		* sempre que e feita uma sincronizacao, os ficheiros de destino (copiados ou previamente existentes) sao modificados para incluir tags de identificacao, se ainda nao existirem.
+		* estas tags tem nomes unicos para esta aplicacao, comecando por um namespace apropriado
+		* estas tags deverao incluir, pelo menos: o hash original; o tamanho original. O nome nao e incluido, ja que este pode facilmente ser mudado. Estes valores sao lidos do ficheiro quando ainda nao exista NENHUM dos tags colocados pela aplicacao.
+	- e' conveniente definir um local de destino como um repositorio. 
+		* um repositorio pode ser definido antes de juntar fotografias ou pode ser criado a partir de um directorio ja existente
+		1) no primeiro caso, nao ha muito a fazer?
+		2) no segundo caso, o repositorio regista todos os ficheiros que existem na arvore comecada nesse directorio, indicando para cada um:
+			* o seu hash
+			* a sua localizacao actual
+			* o hash de cada sub-directorio
+		* justificacao para isto:
+			- quando quero comparar ficheiros numa origem nova com um destino, estes podem estar organizados numa estrutura diferente. Em vez de comparar os directorios com outros do mesmo nome e na mesma posicao, quero comparar cada ficheiro com todos os da origem de destino, independentemente da estrutura de directorios desta. No fundo, quero ter uma estrutura lisa para o destino.
+			- o repositorio facilita isto: e' apenas uma lista de hashes (e possivelmente nomes e tamanhos) com indicacao das suas localizacoes: por cada ficheiro de origem deve ser identificada uma lista com todas as replicas no repositorio que tenham o mesmo hash e tamanho para depois serem comparadas. 
+			- podemos querer modificar o nome de um ficheiro, move-lo para outro directorio ou ate mover um directorio para outro lado: todas estas alteracoes implicam uma reconstrucao do repositorio.
+			- para tornar esta mais eficiente, o repositorio devera guardar tambem um hash do conteudo de todos os directorios por ele contidos. O processo de reconstrucao le novamente o directorio no qual o repositorio esta baseado (o nome deste tambem pode ser mudado) e procede recursivamente por directorio em si contido: para cada directorio, calcula um hash do conteudo (este pode ser um simples dir, mostrando o nome de todos os ficheiros, tamanho e data de alteracao). Se este for igual ao registado no repositorio, o directorio e' saltado sem processamento, assumindo-se que tudo continua na mesma.
+	==============================
+	
+	Interface:
+		* pagina principal:
+			- lista de repositorios e possibilidade de criar um repositorio novo: vazio ou a partir de um directorio.
+			- escolha de um directorio para integrar num repositorio
+			- reconstruir repositorio: detectar alteracoes no disco e actualizar a informacao no repositorio
+		* estruturas de dados
+			- e preciso ter um local onde guardar a lista de repositorios
+			- e preciso guardar um repositorio numa estrutura qualquer: ficheiro de texto? alguma estrutura de indice? MongoDB parece uma boa alternativa, aprendo mais uma tecnologia nova e nao tenho de inventar uma base de dados nova.
+			- MongoDB nao tem esquema. No entanto, ajuda-me fazer um para perceber o que quero guardar:
+				- para ja, acho que so quero uma lista de repositorios
+				- para cada repositorio:
+					* uma lista de ficheiros: hash do ficheiro, nome, tamanho, data de criacao e localizacao
+					* uma lista de sub-directorios dentro do repositorio: localizacao, hash do seu conteudo
+				
+	

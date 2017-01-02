@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>python - How to get meta data with MMPython for images and video - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a%29">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to get meta data with MMPython for images and video">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I'm trying to get the creation date for all the photos and videos in a folder, and having mixed success. I have .jpg, .mov, and .mp4 videos in this folder.
+
+I spent a long time looking at other pos...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video">
+    <link rel="canonical" href="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/how-to-get-meta-data-with-mmpython-for-images-and-video_002.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/ados"></script><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/quant.js"></script><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/beacon.js"></script><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/ados.js"></script><script src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to get meta data with MMPython for images and video'" href="http://stackoverflow.com/feeds/question/25952291">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:25952291});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '25952291');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+            <script>
+                StackExchange.ready(function () {
+                    try {
+                        if (!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGTransform)
+                            return;
+                    } catch (ex) {
+                        return;
+                    }
+                    var d = 100;
+                    $.ajax({url:"//cdn-prom.sstatic.net/WinterBash/js/qa-wb.js?v=8",cache:true,dataType:"script"}).done(function tryInit() {
+                        if (window.WinterBash) {
+                            WinterBash.core.init('winterbash2016.stackexchange.com', '//cdn-prom.sstatic.net/WinterBash/', '8');
+                        } else {
+                            if (d <= 800)
+                                setTimeout(tryInit, d);
+                            d *= 2;
+                        }
+                    });
+                });
+            </script>
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1482694484,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"af6f6239c7eabdfc13d790f53df5a3b1","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"ab":{"question_page_hero":{"v":"delay_hero_3","g":1},"devstory_onboarding_exp":{"v":"g","g":2},"mobile_signup_link":{"v":"simplified_signup_form:rdn","g":2}}},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true,"enableNewHeaderDesign":true,"enableImgurHttps":true},"comments":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"analytics":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"50b5ced7e001","js/moderator.en.js":"9f3ffcf6092c","js/full-anon.en.js":"fb4377e5719d","js/full.en.js":"f0fdccb9e5de","js/wmd.en.js":"b1bf3b6b81b1","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"20710353f000","js/help.en.js":"dbd4f489eff2","js/tageditor.en.js":"679047593031","js/tageditornew.en.js":"15fc677e2435","js/inline-tag-editing.en.js":"ada30ae89544","js/revisions.en.js":"47de10a8358f","js/review.en.js":"4860570a1e5b","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"317470dd4fa5","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"f4b2456abbcd","js/keyboard-shortcuts.en.js":"2d6fc9a97e37","js/external-editor.en.js":"235e80f649d7","js/external-editor.en.js":"235e80f649d7","js/snippet-javascript.en.js":"25d6d4214eed","js/snippet-javascript-codemirror.en.js":"68c50bd0c27a"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/full-anon.js"></script><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/snippet-javascript.js"></script><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/post-validation.js"></script><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/prettify-full.js"></script><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/external-editor.js"></script><script type="text/javascript" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/adFeedback.css"><link rel="stylesheet" type="text/css" href="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/wb-include.css"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="http://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f25952291%2fhow-to-get-meta-data-with-mmpython-for-images-and-video" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="http://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 162 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link" rel="nofollow">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f25952291%2fhow-to-get-meta-data-with-mmpython-for-images-and-video" class="login-link" rel="nofollow">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                        <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                            <li class="youarehere">
+        <a id="nav-questions" href="http://stackoverflow.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:3, destination:1})">
+        Questions
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:6})">
+        Jobs
+        </a>
+    </li>
+                            <li>
+        <a id="nav-docs" href="http://stackoverflow.com/documentation" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:7})">
+        Documentation
+        </a>
+    </li>
+                            <li>
+        <a id="nav-tags" href="http://stackoverflow.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                            <li>
+        <a id="nav-users" href="http://stackoverflow.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:3})">
+        Users
+        </a>
+    </li>
+
+                            <li>
+        <a id="nav-badges" href="http://stackoverflow.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:3, destination:4})">
+        Badges
+        </a>
+    </li>
+
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video" class="question-hyperlink">How to get meta data with MMPython for images and video</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="25952291" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk204826311",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk204826311"><iframe id="ados_frame_adzerk204826311_2617907" scrolling="no" height="90" frameborder="0" width="728"></iframe><img style="position:absolute;" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/i_003.gif" class="tpctbxnmxroryehiahyi" height="0px" border="0" width="0px"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="25952291" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b></b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I'm trying to get the creation date for all the photos and videos in a
+ folder, and having mixed success. I have .jpg, .mov, and .mp4 videos in
+ this folder.</p>
+
+<p>I spent a long time looking at other posts, and I saw quite a few references to the MMPython library here: <a href="http://sourceforge.net/projects/mmpython/" rel="nofollow">http://sourceforge.net/projects/mmpython/</a></p>
+
+<p>Looking through the MMPython source I think this will give me what I 
+need, but the problem is that I don't know how to invoke it. In other 
+words, I have my file, but I don't know how to interface with MMPython 
+and I can't see any examples </p>
+
+<p>Here is my script:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="kwd">import</span><span class="pln"> os
+</span><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">import</span><span class="pln"> exifread
+</span><span class="kwd">import</span><span class="pln"> hashlib
+</span><span class="kwd">import</span><span class="pln"> </span><span class="typ">ExifTool</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">:</span><span class="pln">
+    var </span><span class="pun">=</span><span class="pln"> sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">else</span><span class="pun">:</span><span class="pln">
+    var </span><span class="pun">=</span><span class="pln"> raw_input</span><span class="pun">(</span><span class="str">"Please enter the directory: "</span><span class="pun">)</span><span class="pln">
+    direct </span><span class="pun">=</span><span class="pln"> </span><span class="str">'/Users/bbarr233/Documents/Personal/projects/photoOrg/photos'</span><span class="pln">
+    </span><span class="kwd">print</span><span class="pln"> </span><span class="str">"direct: "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> direct
+    </span><span class="kwd">print</span><span class="pln"> </span><span class="str">"var: "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> var
+var </span><span class="pun">=</span><span class="pln"> var</span><span class="pun">.</span><span class="pln">rstrip</span><span class="pun">()</span><span class="pln">
+</span><span class="kwd">for</span><span class="pln"> root</span><span class="pun">,</span><span class="pln"> dirs</span><span class="pun">,</span><span class="pln"> filenames </span><span class="kwd">in</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">walk</span><span class="pun">(</span><span class="pln">var</span><span class="pun">):</span><span class="pln">
+    </span><span class="kwd">print</span><span class="pln"> </span><span class="str">"root "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> root
+    </span><span class="kwd">for</span><span class="pln"> f </span><span class="kwd">in</span><span class="pln"> filenames</span><span class="pun">:</span><span class="pln">
+        </span><span class="com">#make sure that we are dealing with images or videos</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="str">".jpg"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="str">".jpeg"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="str">".mov"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="str">".mp4"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">print</span><span class="pln"> </span><span class="str">"file "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> root </span><span class="pun">+</span><span class="pln"> </span><span class="str">"/"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> f
+            f </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="pln">root </span><span class="pun">+</span><span class="pln"> </span><span class="str">"/"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> f</span><span class="pun">,</span><span class="pln"> </span><span class="str">'rb'</span><span class="pun">)</span><span class="pln">
+
+            </span><span class="com">#Now I want to do something like this, but don't know which method to call:</span><span class="pln">
+            </span><span class="com">#tags = mmpython.process_file(f)</span><span class="pln">
+            </span><span class="com"># do something with the creation date</span></code></pre>
+
+<p>Can someone hint me on on how I can use the MMPython library?</p>
+
+<p>Thanks!!!</p>
+
+<p>PS. I've looked at some other threads on this, such as: </p>
+
+<p><a href="http://stackoverflow.com/questions/10075115/call-exiftool-from-a-python-script/10075210#10075210">Link to thread</a>:This one didn't make sense to me</p>
+
+<p><a href="https://stackoverflow.com/questions/21355316/getting-metadata-for-mov-video/21395803#21395803">Link to thread</a>: This one worked great for mov but not for my mp4s, it said the creation date was 1946</p>
+
+<p><a href="https://stackoverflow.com/questions/2999444/python-file-meta-tag-reading/2999947#2999947">Link to thread</a>: This thread is one of the ones that suggested MMPython, but like I said I don't know how to use it.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag js-gps-track" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/metadata" class="post-tag js-gps-track" title="show questions tagged 'metadata'" rel="tag">metadata</a> <a href="http://stackoverflow.com/questions/tagged/jpeg" class="post-tag js-gps-track" title="show questions tagged 'jpeg'" rel="tag">jpeg</a> <a href="http://stackoverflow.com/questions/tagged/mp4" class="post-tag js-gps-track" title="show questions tagged 'mp4'" rel="tag">mp4</a> <a href="http://stackoverflow.com/questions/tagged/mov" class="post-tag js-gps-track" title="show questions tagged 'mov'" rel="tag">mov</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/25952291" title="short permalink to this question" class="short-link" id="link-post-25952291">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/25952291/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2014-09-20 19:01:41Z" class="relativetime">Sep 20 '14 at 19:01</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="http://stackoverflow.com/users/469682/b-ryce"><div class="gravatar-wrapper-32"><img src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/0b2717587e3ca07f4d0890423ec4e69a.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/469682/b-ryce">b-ryce</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,933</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="57 bronze badges"><span class="badge3"></span><span class="badgecount">57</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-25952291" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-56897855" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Only ext4 can give you a creation time</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2141635/padraic-cunningham" title="112,248 reputation" class="comment-user">Padraic Cunningham</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment56897855_25952291"><span title="2016-01-03 12:35:46Z" class="relativetime-clean">Jan 3 at 12:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-25952291" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="26127556"></a>
+<div id="answer-26127556" class="answer accepted-answer" data-answerid="26127556" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="26127556" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+<div class="bounty-award-container"><span class="bounty-award" title="This answer has been awarded bounties worth 50 reputation by b-ryce">+50</span></div>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Here is a well commented code example I found which will show you how to use mmpython..</p>
+
+<p>This module extracts metadata from new media files, using mmpython,
+and provides utilities for converting metadata between formats.</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="com">#  Copyright (C) 2005 Micah Dowty &lt;micah@navi.cx&gt;</span><span class="pln">
+</span><span class="com">#  This program is free software; you can redistribute it and/or modify</span><span class="pln">
+</span><span class="com">#  it under the terms of the GNU General Public License as published by</span><span class="pln">
+</span><span class="com">#  the Free Software Foundation; either version 2 of the License, or</span><span class="pln">
+</span><span class="com">#  (at your option) any later version.</span><span class="pln">
+</span><span class="com">#</span><span class="pln">
+</span><span class="com">#  This program is distributed in the hope that it will be useful,</span><span class="pln">
+</span><span class="com">#  but WITHOUT ANY WARRANTY; without even the implied warranty of</span><span class="pln">
+</span><span class="com">#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span><span class="pln">
+</span><span class="com">#  GNU General Public License for more details.</span><span class="pln">
+</span><span class="com">#</span><span class="pln">
+</span><span class="com">#  You should have received a copy of the GNU General Public License</span><span class="pln">
+</span><span class="com">#  along with this program; if not, write to the Free Software</span><span class="pln">
+</span><span class="com">#  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span><span class="pln">
+
+</span><span class="kwd">import</span><span class="pln"> md5</span><span class="pun">,</span><span class="pln"> os</span><span class="pun">,</span><span class="pln"> cPickle
+</span><span class="kwd">import</span><span class="pln"> mmpython
+</span><span class="kwd">from</span><span class="pln"> mmpython</span><span class="pun">.</span><span class="pln">audio </span><span class="kwd">import</span><span class="pln"> mp3info
+</span><span class="kwd">import</span><span class="pln"> sqlite
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">RioKarma</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">Paths</span><span class="pln">
+
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">RidCalculator</span><span class="pun">:</span><span class="pln">
+    </span><span class="str">"""This object calculates the RID of a file- a sparse digest used by Rio Karma.
+       For files &lt;= 64K, this is the file's md5sum. For larger files, this is the XOR
+       of three md5sums, from 64k blocks in the beginning, middle, and end.
+       """</span><span class="pln">
+    </span><span class="kwd">def</span><span class="pln"> fromSection</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> fileObj</span><span class="pun">,</span><span class="pln"> start</span><span class="pun">,</span><span class="pln"> end</span><span class="pun">,</span><span class="pln"> blockSize</span><span class="pun">=</span><span class="lit">0x10000</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""This needs a file-like object, as well as the offset and length of the portion
+           the RID is generated from. Beware that there is a special case for MP3 files.
+           """</span><span class="pln">
+        </span><span class="com"># It's a short file, compute only one digest</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> end</span><span class="pun">-</span><span class="pln">start </span><span class="pun">&lt;=</span><span class="pln"> blockSize</span><span class="pun">:</span><span class="pln">
+            fileObj</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">(</span><span class="pln">start</span><span class="pun">)</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> md5</span><span class="pun">.</span><span class="pln">md5</span><span class="pun">(</span><span class="pln">fileObj</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="pln">end</span><span class="pun">-</span><span class="pln">start</span><span class="pun">)).</span><span class="pln">hexdigest</span><span class="pun">()</span><span class="pln">
+
+        </span><span class="com"># Three digests for longer files</span><span class="pln">
+        fileObj</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">(</span><span class="pln">start</span><span class="pun">)</span><span class="pln">
+        a </span><span class="pun">=</span><span class="pln"> md5</span><span class="pun">.</span><span class="pln">md5</span><span class="pun">(</span><span class="pln">fileObj</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="pln">blockSize</span><span class="pun">)).</span><span class="pln">digest</span><span class="pun">()</span><span class="pln">
+
+        fileObj</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">(</span><span class="pln">end </span><span class="pun">-</span><span class="pln"> blockSize</span><span class="pun">)</span><span class="pln">
+        b </span><span class="pun">=</span><span class="pln"> md5</span><span class="pun">.</span><span class="pln">md5</span><span class="pun">(</span><span class="pln">fileObj</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="pln">blockSize</span><span class="pun">)).</span><span class="pln">digest</span><span class="pun">()</span><span class="pln">
+
+        fileObj</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">((</span><span class="pln">start </span><span class="pun">+</span><span class="pln"> end </span><span class="pun">-</span><span class="pln"> blockSize</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln">
+        c </span><span class="pun">=</span><span class="pln"> md5</span><span class="pun">.</span><span class="pln">md5</span><span class="pun">(</span><span class="pln">fileObj</span><span class="pun">.</span><span class="pln">read</span><span class="pun">(</span><span class="pln">blockSize</span><span class="pun">)).</span><span class="pln">digest</span><span class="pun">()</span><span class="pln">
+
+        </span><span class="com"># Combine the three digests</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="str">''</span><span class="pun">.</span><span class="pln">join</span><span class="pun">([</span><span class="str">"%02x"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ord</span><span class="pun">(</span><span class="pln">a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">])</span><span class="pln"> </span><span class="pun">^</span><span class="pln"> ord</span><span class="pun">(</span><span class="pln">b</span><span class="pun">[</span><span class="pln">i</span><span class="pun">])</span><span class="pln"> </span><span class="pun">^</span><span class="pln"> ord</span><span class="pun">(</span><span class="pln">c</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]))</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> range</span><span class="pun">(</span><span class="lit">16</span><span class="pun">)])</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> fromFile</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> filename</span><span class="pun">,</span><span class="pln"> length</span><span class="pun">=</span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> mminfo</span><span class="pun">=</span><span class="kwd">None</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Calculate the RID from a file, given its name. The file's length and
+           mmpython results may be provided if they're known, to avoid duplicating work.
+           """</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> mminfo </span><span class="kwd">is</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">:</span><span class="pln">
+            mminfo </span><span class="pun">=</span><span class="pln"> mmpython</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">)</span><span class="pln">
+
+        f </span><span class="pun">=</span><span class="pln"> open</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">,</span><span class="pln"> </span><span class="str">"rb"</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> length </span><span class="kwd">is</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">:</span><span class="pln">
+            f</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln">
+            length </span><span class="pun">=</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">tell</span><span class="pun">()</span><span class="pln">
+            f</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># Is this an MP3 file? For some silliness we have to skip the header</span><span class="pln">
+        </span><span class="com"># and the last 128 bytes of the file. mmpython can tell us where the</span><span class="pln">
+        </span><span class="com"># header starts, but only in a somewhat ugly way.</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> isinstance</span><span class="pun">(</span><span class="pln">mminfo</span><span class="pun">,</span><span class="pln"> mmpython</span><span class="pun">.</span><span class="pln">audio</span><span class="pun">.</span><span class="pln">eyed3info</span><span class="pun">.</span><span class="pln">eyeD3Info</span><span class="pun">):</span><span class="pln">
+        </span><span class="kwd">try</span><span class="pun">:</span><span class="pln">
+            offset </span><span class="pun">=</span><span class="pln"> mp3info</span><span class="pun">.</span><span class="pln">MPEG</span><span class="pun">(</span><span class="pln">f</span><span class="pun">).</span><span class="pln">_find_header</span><span class="pun">(</span><span class="pln">f</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">]</span><span class="pln">
+            </span><span class="kwd">except</span><span class="pln"> </span><span class="typ">ZeroDivisionError</span><span class="pun">:</span><span class="pln">
+            </span><span class="com"># This is a bit of a kludge, since mmpython seems to crash</span><span class="pln">
+        </span><span class="com"># here on some MP3s for a currently-unknown reason.</span><span class="pln">
+        </span><span class="kwd">print</span><span class="pln"> </span><span class="str">"WARNING, mmpython got a div0 error on %r"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> filename
+        offset </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> offset </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">:</span><span class="pln">
+                </span><span class="com"># Hmm, it couldn't find the header? Set this to zero</span><span class="pln">
+                </span><span class="com"># so we still get a usable RID, but it probably</span><span class="pln">
+                </span><span class="com"># won't strictly be a correct RID.</span><span class="pln">
+                offset </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
+
+            f</span><span class="pun">.</span><span class="pln">seek</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">fromSection</span><span class="pun">(</span><span class="pln">f</span><span class="pun">,</span><span class="pln"> offset</span><span class="pun">,</span><span class="pln"> length</span><span class="pun">-</span><span class="lit">128</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># Otherwise, use the whole file</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">fromSection</span><span class="pun">(</span><span class="pln">f</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> length</span><span class="pun">)</span><span class="pln">
+
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">BaseCache</span><span class="pun">:</span><span class="pln">
+    </span><span class="str">"""This is an abstract base class for objects that cache metadata
+       dictionaries on disk. The cache is implemented as a sqlite database,
+       with a 'dict' table holding administrative key-value data, and a
+       'files' table holding both a pickled representation of the metadata
+       and separate columns for all searchable keys.
+       """</span><span class="pln">
+    </span><span class="com"># This must be defined by subclasses as a small integer that changes</span><span class="pln">
+    </span><span class="com"># when any part of the database schema or our storage format changes.</span><span class="pln">
+    schemaVersion </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+
+    </span><span class="com"># This is the template for our SQL schema. All searchable keys are</span><span class="pln">
+    </span><span class="com"># filled in automatically, but other items may be added by subclasses.</span><span class="pln">
+    schemaTemplate </span><span class="pun">=</span><span class="pln"> </span><span class="str">"""
+    CREATE TABLE dict
+    (
+        name   VARCHAR(64) PRIMARY KEY,
+        value  TEXT
+    );
+
+    CREATE TABLE files
+    (
+        %(keys)s,
+        _pickled TEXT NOT NULL
+    );
+    """</span><span class="pln">
+
+    </span><span class="com"># A list of searchable keys, used to build the schema and validate queries</span><span class="pln">
+    searchableKeys </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+    keyType </span><span class="pun">=</span><span class="pln"> </span><span class="str">"VARCHAR(255)"</span><span class="pln">
+
+    </span><span class="com"># The primary key is what ensures a file's uniqueness. Inserting a file</span><span class="pln">
+    </span><span class="com"># with a primary key identical to an existing one will update that</span><span class="pln">
+    </span><span class="com"># file rather than creating a new one.</span><span class="pln">
+    primaryKey </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">):</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> name
+        self</span><span class="pun">.</span><span class="pln">connection </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> open</span><span class="pun">(</span><span class="pln">self</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Open the cache, creating it if necessary"""</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">connection </span><span class="kwd">is</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln">
+
+        self</span><span class="pun">.</span><span class="pln">connection </span><span class="pun">=</span><span class="pln"> sqlite</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="typ">Paths</span><span class="pun">.</span><span class="pln">getCache</span><span class="pun">(</span><span class="pln">self</span><span class="pun">.</span><span class="pln">name</span><span class="pun">))</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">cursor </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">connection</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">()</span><span class="pln">
+
+        </span><span class="com"># See what version of the database we got. If it's empty</span><span class="pln">
+        </span><span class="com"># or it's old, we need to reset it.</span><span class="pln">
+        </span><span class="kwd">try</span><span class="pun">:</span><span class="pln">
+            version </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_dictGet</span><span class="pun">(</span><span class="str">'schemaVersion'</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">except</span><span class="pln"> sqlite</span><span class="pun">.</span><span class="typ">DatabaseError</span><span class="pun">:</span><span class="pln">
+            version </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> version </span><span class="pun">!=</span><span class="pln"> str</span><span class="pun">(</span><span class="pln">self</span><span class="pun">.</span><span class="pln">schemaVersion</span><span class="pun">):</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">empty</span><span class="pun">()</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> close</span><span class="pun">(</span><span class="pln">self</span><span class="pun">):</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">connection </span><span class="kwd">is</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">:</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">sync</span><span class="pun">()</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">connection</span><span class="pun">.</span><span class="pln">close</span><span class="pun">()</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">connection </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _getSchema</span><span class="pun">(</span><span class="pln">self</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Create a complete schema from our schema template and searchableKeys"""</span><span class="pln">
+        keys </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[]</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> key </span><span class="kwd">in</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">searchableKeys</span><span class="pun">:</span><span class="pln">
+            type </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">keyType
+            </span><span class="kwd">if</span><span class="pln"> key </span><span class="pun">==</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">primaryKey</span><span class="pun">:</span><span class="pln">
+                type </span><span class="pun">+=</span><span class="pln"> </span><span class="str">" PRIMARY KEY"</span><span class="pln">
+            keys</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="str">"%s %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">key</span><span class="pun">,</span><span class="pln"> type</span><span class="pun">))</span><span class="pln">
+
+        </span><span class="kwd">return</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">schemaTemplate </span><span class="pun">%</span><span class="pln"> dict</span><span class="pun">(</span><span class="pln">keys</span><span class="pun">=</span><span class="str">', '</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="pln">keys</span><span class="pun">))</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _encode</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> obj</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Encode an object that may not be a plain string"""</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> type</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> unicode</span><span class="pun">:</span><span class="pln">
+            obj </span><span class="pun">=</span><span class="pln"> obj</span><span class="pun">.</span><span class="pln">encode</span><span class="pun">(</span><span class="str">'utf-8'</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">elif</span><span class="pln"> type</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> str</span><span class="pun">:</span><span class="pln">
+            obj </span><span class="pun">=</span><span class="pln"> str</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="str">"'%s'"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> sqlite</span><span class="pun">.</span><span class="pln">encode</span><span class="pun">(</span><span class="pln">obj</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _dictGet</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> key</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Return a value stored in the persistent dictionary. Returns None if
+           the key has no matching value.
+           """</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"SELECT value FROM dict WHERE name = '%s'"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> key</span><span class="pun">)</span><span class="pln">
+        row </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">fetchone</span><span class="pun">()</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> row</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> sqlite</span><span class="pun">.</span><span class="pln">decode</span><span class="pun">(</span><span class="pln">row</span><span class="pun">[</span><span class="lit">0</span><span class="pun">])</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _dictSet</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> key</span><span class="pun">,</span><span class="pln"> value</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Create or update a value stored in the persistent dictionary"""</span><span class="pln">
+        encodedValue </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_encode</span><span class="pun">(</span><span class="pln">value</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># First try inserting a new item</span><span class="pln">
+        </span><span class="kwd">try</span><span class="pun">:</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"INSERT INTO dict (name, value) VALUES ('%s', %s)"</span><span class="pln"> </span><span class="pun">%</span><span class="pln">
+                                </span><span class="pun">(</span><span class="pln">key</span><span class="pun">,</span><span class="pln"> encodedValue</span><span class="pun">))</span><span class="pln">
+        </span><span class="kwd">except</span><span class="pln"> sqlite</span><span class="pun">.</span><span class="typ">IntegrityError</span><span class="pun">:</span><span class="pln">
+            </span><span class="com"># Violated the primary key constraint, update an existing item</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"UPDATE dict SET value = %s WHERE name = '%s'"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">
+                encodedValue</span><span class="pun">,</span><span class="pln"> key</span><span class="pun">))</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> sync</span><span class="pun">(</span><span class="pln">self</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Synchronize in-memory parts of the cache with disk"""</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">connection</span><span class="pun">.</span><span class="pln">commit</span><span class="pun">()</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> empty</span><span class="pun">(</span><span class="pln">self</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Reset the database to a default empty state"""</span><span class="pln">
+
+        </span><span class="com"># Find and destroy every table in the database</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"SELECT tbl_name FROM sqlite_master WHERE type='table'"</span><span class="pun">)</span><span class="pln">
+        tables </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">row</span><span class="pun">.</span><span class="pln">tbl_name </span><span class="kwd">for</span><span class="pln"> row </span><span class="kwd">in</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">fetchall</span><span class="pun">()]</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> table </span><span class="kwd">in</span><span class="pln"> tables</span><span class="pun">:</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"DROP TABLE %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> table</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># Apply the schema</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="pln">self</span><span class="pun">.</span><span class="pln">_getSchema</span><span class="pun">())</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">_dictSet</span><span class="pun">(</span><span class="str">'schemaVersion'</span><span class="pun">,</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">schemaVersion</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _insertFile</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> d</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Insert a new file into the cache, given a dictionary of its metadata"""</span><span class="pln">
+
+        </span><span class="com"># Make name/value lists for everything we want to update</span><span class="pln">
+        dbItems </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="str">'_pickled'</span><span class="pun">:</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_encode</span><span class="pun">(</span><span class="pln">cPickle</span><span class="pun">.</span><span class="pln">dumps</span><span class="pun">(</span><span class="pln">d</span><span class="pun">,</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">))}</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> column </span><span class="kwd">in</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">searchableKeys</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> column </span><span class="kwd">in</span><span class="pln"> d</span><span class="pun">:</span><span class="pln">
+                dbItems</span><span class="pun">[</span><span class="pln">column</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_encode</span><span class="pun">(</span><span class="pln">d</span><span class="pun">[</span><span class="pln">column</span><span class="pun">])</span><span class="pln">
+
+        </span><span class="com"># First try inserting a new row</span><span class="pln">
+        </span><span class="kwd">try</span><span class="pun">:</span><span class="pln">
+            names </span><span class="pun">=</span><span class="pln"> dbItems</span><span class="pun">.</span><span class="pln">keys</span><span class="pun">()</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"INSERT INTO files (%s) VALUES (%s)"</span><span class="pln"> </span><span class="pun">%</span><span class="pln">
+                                </span><span class="pun">(</span><span class="str">","</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="pln">names</span><span class="pun">),</span><span class="pln"> </span><span class="str">","</span><span class="pun">.</span><span class="pln">join</span><span class="pun">([</span><span class="pln">dbItems</span><span class="pun">[</span><span class="pln">k</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> k </span><span class="kwd">in</span><span class="pln"> names</span><span class="pun">])))</span><span class="pln">
+        </span><span class="kwd">except</span><span class="pln"> sqlite</span><span class="pun">.</span><span class="typ">IntegrityError</span><span class="pun">:</span><span class="pln">
+            </span><span class="com"># Violated the primary key constraint, update an existing item</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"UPDATE files SET %s WHERE %s = %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">
+                </span><span class="str">", "</span><span class="pun">.</span><span class="pln">join</span><span class="pun">([</span><span class="str">"%s = %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> i </span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> dbItems</span><span class="pun">.</span><span class="pln">iteritems</span><span class="pun">()]),</span><span class="pln">
+                self</span><span class="pun">.</span><span class="pln">primaryKey</span><span class="pun">,</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_encode</span><span class="pun">(</span><span class="pln">d</span><span class="pun">[</span><span class="pln">self</span><span class="pun">.</span><span class="pln">primaryKey</span><span class="pun">])))</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _deleteFile</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> key</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Delete a File from the cache, given its primary key"""</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"DELETE FROM files WHERE %s = %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">primaryKey</span><span class="pun">,</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_encode</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)))</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _getFile</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> key</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Return a metadata dictionary given its primary key"""</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"SELECT _pickled FROM files WHERE %s = %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">primaryKey</span><span class="pun">,</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_encode</span><span class="pun">(</span><span class="pln">key</span><span class="pun">)))</span><span class="pln">
+        row </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">fetchone</span><span class="pun">()</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> row</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> cPickle</span><span class="pun">.</span><span class="pln">loads</span><span class="pun">(</span><span class="pln">sqlite</span><span class="pun">.</span><span class="pln">decode</span><span class="pun">(</span><span class="pln">row</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]))</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> _findFiles</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> </span><span class="pun">**</span><span class="pln">kw</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Search for files. The provided keywords must be searchable.
+           Yields a list of details dictionaries, one for each match.
+           Any keyword can be None (matches anything) or it can be a
+           string to match. Keywords that aren't provided are assumed
+           to be None.
+           """</span><span class="pln">
+        constraints </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[]</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> key</span><span class="pun">,</span><span class="pln"> value </span><span class="kwd">in</span><span class="pln"> kw</span><span class="pun">.</span><span class="pln">iteritems</span><span class="pun">():</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> key </span><span class="kwd">not</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">searchableKeys</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">raise</span><span class="pln"> </span><span class="typ">ValueError</span><span class="pun">(</span><span class="str">"Key name %r is not searchable"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> key</span><span class="pun">)</span><span class="pln">
+            constraints</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="str">"%s = %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">key</span><span class="pun">,</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_encode</span><span class="pun">(</span><span class="pln">value</span><span class="pun">)))</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> constraints</span><span class="pun">:</span><span class="pln">
+            constraints</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="str">"1"</span><span class="pun">)</span><span class="pln">
+
+        self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"SELECT _pickled FROM files WHERE %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln">
+                            </span><span class="str">" AND "</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="pln">constraints</span><span class="pun">))</span><span class="pln">
+        row </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pln"> </span><span class="lit">1</span><span class="pun">:</span><span class="pln">
+            row </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">fetchone</span><span class="pun">()</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> row</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pln">
+            </span><span class="kwd">yield</span><span class="pln"> cPickle</span><span class="pun">.</span><span class="pln">loads</span><span class="pun">(</span><span class="pln">sqlite</span><span class="pun">.</span><span class="pln">decode</span><span class="pun">(</span><span class="pln">row</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]))</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> countFiles</span><span class="pun">(</span><span class="pln">self</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Return the number of files cached"""</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">execute</span><span class="pun">(</span><span class="str">"SELECT COUNT(_pickled) FROM files"</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> int</span><span class="pun">(</span><span class="pln">self</span><span class="pun">.</span><span class="pln">cursor</span><span class="pun">.</span><span class="pln">fetchone</span><span class="pun">()[</span><span class="lit">0</span><span class="pun">])</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> updateStamp</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> stamp</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""The stamp for this cache is any arbitrary value that is expected to
+           change when the actual data on the device changes. It is used to
+           check the cache's validity. This function update's the stamp from
+           a value that is known to match the cache's current contents.
+           """</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">_dictSet</span><span class="pun">(</span><span class="str">'stamp'</span><span class="pun">,</span><span class="pln"> stamp</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> checkStamp</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> stamp</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Check whether a provided stamp matches the cache's stored stamp.
+           This should be used when you have a stamp that matches the actual
+           data on the device, and you want to see if the cache is still valid.
+           """</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_dictGet</span><span class="pun">(</span><span class="str">'stamp'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> str</span><span class="pun">(</span><span class="pln">stamp</span><span class="pun">)</span><span class="pln">
+
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">LocalCache</span><span class="pun">(</span><span class="typ">BaseCache</span><span class="pun">):</span><span class="pln">
+    </span><span class="str">"""This is a searchable metadata cache for files on the local disk.
+       It can be used to speed up repeated metadata lookups for local files,
+       but more interestingly it can be used to provide full metadata searching
+       on local music files.
+       """</span><span class="pln">
+    schemaVersion </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+    searchableKeys </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="str">'type'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'rid'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'title'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'artist'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'source'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'filename'</span><span class="pun">)</span><span class="pln">
+    primaryKey </span><span class="pun">=</span><span class="pln"> </span><span class="str">'filename'</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> lookup</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> filename</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Return a details dictionary for the given filename, using the cache if possible"""</span><span class="pln">
+        filename </span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">realpath</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># Use the mtime as a stamp to see if our cache is still valid</span><span class="pln">
+        mtime </span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">stat</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">).</span><span class="pln">st_mtime
+        cached </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_getFile</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> cached </span><span class="kwd">and</span><span class="pln"> int</span><span class="pun">(</span><span class="pln">cached</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'mtime'</span><span class="pun">))</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> int</span><span class="pun">(</span><span class="pln">mtime</span><span class="pun">):</span><span class="pln">
+            </span><span class="com"># Yay, still valid</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> cached</span><span class="pun">[</span><span class="str">'details'</span><span class="pun">]</span><span class="pln">
+
+        </span><span class="com"># Nope, generate a new dict and cache it</span><span class="pln">
+        details </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">
+        </span><span class="typ">Converter</span><span class="pun">().</span><span class="pln">detailsFromDisk</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">,</span><span class="pln"> details</span><span class="pun">)</span><span class="pln">
+        generated </span><span class="pun">=</span><span class="pln"> dict</span><span class="pun">(</span><span class="pln">
+            type     </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'type'</span><span class="pun">),</span><span class="pln">
+            rid      </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'rid'</span><span class="pun">),</span><span class="pln">
+            title    </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'title'</span><span class="pun">),</span><span class="pln">
+            artist   </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'artist'</span><span class="pun">),</span><span class="pln">
+            source   </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'source'</span><span class="pun">),</span><span class="pln">
+            mtime    </span><span class="pun">=</span><span class="pln"> mtime</span><span class="pun">,</span><span class="pln">
+            filename </span><span class="pun">=</span><span class="pln"> filename</span><span class="pun">,</span><span class="pln">
+            details  </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">,</span><span class="pln">
+            </span><span class="pun">)</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">_insertFile</span><span class="pun">(</span><span class="pln">generated</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> details
+
+    </span><span class="kwd">def</span><span class="pln"> findFiles</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> </span><span class="pun">**</span><span class="pln">kw</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Search for files that match all given search keys. This returns an iterator
+           over filenames, skipping any files that aren't currently valid in the cache.
+           """</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> cached </span><span class="kwd">in</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">_findFiles</span><span class="pun">(**</span><span class="pln">kw</span><span class="pun">):</span><span class="pln">
+            </span><span class="kwd">try</span><span class="pun">:</span><span class="pln">
+                mtime </span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">stat</span><span class="pun">(</span><span class="pln">cached</span><span class="pun">[</span><span class="str">'filename'</span><span class="pun">]).</span><span class="pln">st_mtime
+            </span><span class="kwd">except</span><span class="pln"> </span><span class="typ">OSError</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">pass</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">if</span><span class="pln"> cached</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'mtime'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> mtime</span><span class="pun">:</span><span class="pln">
+                    </span><span class="kwd">yield</span><span class="pln"> cached</span><span class="pun">[</span><span class="str">'filename'</span><span class="pun">]</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> scan</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> path</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Recursively scan all files within the specified path, creating
+           or updating their cache entries.
+           """</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> root</span><span class="pun">,</span><span class="pln"> dirs</span><span class="pun">,</span><span class="pln"> files </span><span class="kwd">in</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">walk</span><span class="pun">(</span><span class="pln">path</span><span class="pun">):</span><span class="pln">
+            </span><span class="kwd">for</span><span class="pln"> name </span><span class="kwd">in</span><span class="pln"> files</span><span class="pun">:</span><span class="pln">
+                filename </span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="pln">root</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">)</span><span class="pln">
+                self</span><span class="pun">.</span><span class="pln">lookup</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">)</span><span class="pln">
+
+            </span><span class="com"># checkpoint this after every directory</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">sync</span><span class="pun">()</span><span class="pln">
+
+_defaultLocalCache </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> getLocalCache</span><span class="pun">(</span><span class="pln">create</span><span class="pun">=</span><span class="kwd">True</span><span class="pun">):</span><span class="pln">
+    </span><span class="str">"""Get the default instance of LocalCache"""</span><span class="pln">
+    </span><span class="kwd">global</span><span class="pln"> _defaultLocalCache
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">not</span><span class="pln"> _defaultLocalCache</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> create</span><span class="pun">:</span><span class="pln">
+        _defaultLocalCache </span><span class="pun">=</span><span class="pln"> </span><span class="typ">LocalCache</span><span class="pun">(</span><span class="str">"local"</span><span class="pun">)</span><span class="pln">
+        _defaultLocalCache</span><span class="pun">.</span><span class="pln">open</span><span class="pun">()</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> _defaultLocalCache
+
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Converter</span><span class="pun">:</span><span class="pln">
+    </span><span class="str">"""This object manages the connection between different kinds of
+       metadata- the data stored within a file on disk, mmpython attributes,
+       Rio attributes, and file extensions.
+       """</span><span class="pln">
+    </span><span class="com"># Maps mmpython classes to codec names for all formats the player</span><span class="pln">
+    </span><span class="com"># hardware supports.</span><span class="pln">
+    codecNames </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        mmpython</span><span class="pun">.</span><span class="pln">audio</span><span class="pun">.</span><span class="pln">eyed3info</span><span class="pun">.</span><span class="pln">eyeD3Info</span><span class="pun">:</span><span class="pln"> </span><span class="str">'mp3'</span><span class="pun">,</span><span class="pln">
+        mmpython</span><span class="pun">.</span><span class="pln">audio</span><span class="pun">.</span><span class="pln">mp3info</span><span class="pun">.</span><span class="pln">MP3Info</span><span class="pun">:</span><span class="pln">     </span><span class="str">'mp3'</span><span class="pun">,</span><span class="pln">
+        mmpython</span><span class="pun">.</span><span class="pln">audio</span><span class="pun">.</span><span class="pln">flacinfo</span><span class="pun">.</span><span class="typ">FlacInfo</span><span class="pun">:</span><span class="pln">   </span><span class="str">'flac'</span><span class="pun">,</span><span class="pln">
+        mmpython</span><span class="pun">.</span><span class="pln">audio</span><span class="pun">.</span><span class="pln">pcminfo</span><span class="pun">.</span><span class="typ">PCMInfo</span><span class="pun">:</span><span class="pln">     </span><span class="str">'wave'</span><span class="pun">,</span><span class="pln">
+        mmpython</span><span class="pun">.</span><span class="pln">video</span><span class="pun">.</span><span class="pln">asfinfo</span><span class="pun">.</span><span class="typ">AsfInfo</span><span class="pun">:</span><span class="pln">     </span><span class="str">'wma'</span><span class="pun">,</span><span class="pln">
+        mmpython</span><span class="pun">.</span><span class="pln">audio</span><span class="pun">.</span><span class="pln">ogginfo</span><span class="pun">.</span><span class="typ">OggInfo</span><span class="pun">:</span><span class="pln">     </span><span class="str">'vorbis'</span><span class="pun">,</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="com"># Maps codec names to extensions. Identity mappings are the</span><span class="pln">
+    </span><span class="com"># default, so they are omitted.</span><span class="pln">
+    codecExtensions </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="str">'wave'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'wav'</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'vorbis'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'ogg'</span><span class="pun">,</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> filenameFromDetails</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> details</span><span class="pun">,</span><span class="pln">
+                            unicodeEncoding </span><span class="pun">=</span><span class="pln"> </span><span class="str">'utf-8'</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Determine a good filename to use for a file with the given metadata
+           in the Rio 'details' format. If it's a data file, this will use the
+           original file as stored in 'title'.
+
+           Otherwise, it uses Navi's naming convention: Artist_Name/album_name/##_track_name.extension
+           """</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'type'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'taxi'</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pln"> details</span><span class="pun">[</span><span class="str">'title'</span><span class="pun">]</span><span class="pln">
+
+        </span><span class="com"># Start with just the artist...</span><span class="pln">
+        name </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'artist'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'None'</span><span class="pun">).</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">os</span><span class="pun">.</span><span class="pln">sep</span><span class="pun">,</span><span class="pln"> </span><span class="str">""</span><span class="pun">).</span><span class="pln">replace</span><span class="pun">(</span><span class="str">" "</span><span class="pun">,</span><span class="pln"> </span><span class="str">"_"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">sep
+
+        album </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'source'</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> album</span><span class="pun">:</span><span class="pln">
+            name </span><span class="pun">+=</span><span class="pln"> album</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">os</span><span class="pun">.</span><span class="pln">sep</span><span class="pun">,</span><span class="pln"> </span><span class="str">""</span><span class="pun">).</span><span class="pln">replace</span><span class="pun">(</span><span class="str">" "</span><span class="pun">,</span><span class="pln"> </span><span class="str">"_"</span><span class="pun">).</span><span class="pln">lower</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">sep
+
+        track </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'tracknr'</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> track</span><span class="pun">:</span><span class="pln">
+            name </span><span class="pun">+=</span><span class="pln"> </span><span class="str">"%02d_"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> track
+
+        name </span><span class="pun">+=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'title'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'None'</span><span class="pun">).</span><span class="pln">replace</span><span class="pun">(</span><span class="pln">os</span><span class="pun">.</span><span class="pln">sep</span><span class="pun">,</span><span class="pln"> </span><span class="str">""</span><span class="pun">).</span><span class="pln">replace</span><span class="pun">(</span><span class="str">" "</span><span class="pun">,</span><span class="pln"> </span><span class="str">"_"</span><span class="pun">).</span><span class="pln">lower</span><span class="pun">()</span><span class="pln">
+
+        codec </span><span class="pun">=</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'codec'</span><span class="pun">)</span><span class="pln">
+        extension </span><span class="pun">=</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">codecExtensions</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="pln">codec</span><span class="pun">,</span><span class="pln"> codec</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> extension</span><span class="pun">:</span><span class="pln">
+            name </span><span class="pun">+=</span><span class="pln"> </span><span class="str">'.'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> extension
+        </span><span class="kwd">return</span><span class="pln"> unicode</span><span class="pun">(</span><span class="pln">name</span><span class="pun">).</span><span class="pln">encode</span><span class="pun">(</span><span class="pln">unicodeEncoding</span><span class="pun">,</span><span class="pln"> </span><span class="str">'replace'</span><span class="pun">)</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> detailsFromDisk</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> filename</span><span class="pun">,</span><span class="pln"> details</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Automagically load media metadata out of the provided filename,
+           adding entries to details. This works on any file type
+           mmpython recognizes, and other files should be tagged
+           appropriately for Rio Taxi.
+           """</span><span class="pln">
+        info </span><span class="pun">=</span><span class="pln"> mmpython</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">)</span><span class="pln">
+        st </span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">stat</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># Generic details for any file. Note that we start out assuming</span><span class="pln">
+        </span><span class="com"># all files are unreadable, and label everything for Rio Taxi.</span><span class="pln">
+        </span><span class="com"># Later we'll mark supported formats as music.</span><span class="pln">
+        details</span><span class="pun">[</span><span class="str">'length'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> st</span><span class="pun">.</span><span class="pln">st_size
+        details</span><span class="pun">[</span><span class="str">'type'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'taxi'</span><span class="pln">
+        details</span><span class="pun">[</span><span class="str">'rid'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">RidCalculator</span><span class="pun">().</span><span class="pln">fromFile</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">,</span><span class="pln"> st</span><span class="pun">.</span><span class="pln">st_size</span><span class="pun">,</span><span class="pln"> info</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># We get the bulk of our metadata via mmpython if possible</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> info</span><span class="pun">:</span><span class="pln">
+            self</span><span class="pun">.</span><span class="pln">detailsFromMM</span><span class="pun">(</span><span class="pln">info</span><span class="pun">,</span><span class="pln"> details</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> details</span><span class="pun">[</span><span class="str">'type'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'taxi'</span><span class="pun">:</span><span class="pln">
+            </span><span class="com"># All taxi files get their filename as their title, regardless of what mmpython said</span><span class="pln">
+            details</span><span class="pun">[</span><span class="str">'title'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">basename</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">)</span><span class="pln">
+
+            </span><span class="com"># Taxi files also always get a codec of 'taxi'</span><span class="pln">
+            details</span><span class="pun">[</span><span class="str">'codec'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'taxi'</span><span class="pln">
+
+        </span><span class="com"># Music files that still don't get a title get their filename minus the extension</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> details</span><span class="pun">.</span><span class="pln">get</span><span class="pun">(</span><span class="str">'title'</span><span class="pun">):</span><span class="pln">
+            details</span><span class="pun">[</span><span class="str">'title'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">splitext</span><span class="pun">(</span><span class="pln">os</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">basename</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">))[</span><span class="lit">0</span><span class="pun">]</span><span class="pln">
+
+    </span><span class="kwd">def</span><span class="pln"> detailsFromMM</span><span class="pun">(</span><span class="pln">self</span><span class="pun">,</span><span class="pln"> info</span><span class="pun">,</span><span class="pln"> details</span><span class="pun">):</span><span class="pln">
+        </span><span class="str">"""Update Rio-style 'details' metadata from MMPython info"""</span><span class="pln">
+        </span><span class="com"># Mime types aren't implemented consistently in mmpython, but</span><span class="pln">
+        </span><span class="com"># we can look at the type of the returned object to decide</span><span class="pln">
+        </span><span class="com"># whether this is a format that the Rio probably supports.</span><span class="pln">
+        </span><span class="com"># This dictionary maps mmpython clases to Rio codec names.</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> cls</span><span class="pun">,</span><span class="pln"> codec </span><span class="kwd">in</span><span class="pln"> self</span><span class="pun">.</span><span class="pln">codecNames</span><span class="pun">.</span><span class="pln">iteritems</span><span class="pun">():</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> isinstance</span><span class="pun">(</span><span class="pln">info</span><span class="pun">,</span><span class="pln"> cls</span><span class="pun">):</span><span class="pln">
+                details</span><span class="pun">[</span><span class="str">'type'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'tune'</span><span class="pln">
+                details</span><span class="pun">[</span><span class="str">'codec'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> codec
+                </span><span class="kwd">break</span><span class="pln">
+
+        </span><span class="com"># Map simple keys that don't require and hackery</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> fromKey</span><span class="pun">,</span><span class="pln"> toKey </span><span class="kwd">in</span><span class="pln"> </span><span class="pun">(</span><span class="pln">
+            </span><span class="pun">(</span><span class="str">'artist'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'artist'</span><span class="pun">),</span><span class="pln">
+            </span><span class="pun">(</span><span class="str">'title'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'title'</span><span class="pun">),</span><span class="pln">
+            </span><span class="pun">(</span><span class="str">'album'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'source'</span><span class="pun">),</span><span class="pln">
+            </span><span class="pun">(</span><span class="str">'date'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'year'</span><span class="pun">),</span><span class="pln">
+            </span><span class="pun">(</span><span class="str">'samplerate'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'samplerate'</span><span class="pun">),</span><span class="pln">
+            </span><span class="pun">):</span><span class="pln">
+            v </span><span class="pun">=</span><span class="pln"> info</span><span class="pun">[</span><span class="pln">fromKey</span><span class="pun">]</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> v </span><span class="kwd">is</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">:</span><span class="pln">
+                details</span><span class="pun">[</span><span class="pln">toKey</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> v
+
+        </span><span class="com"># The rio uses a two-letter prefix on bit rates- the first letter</span><span class="pln">
+        </span><span class="com"># is 'f' or 'v', presumably for fixed or variable. The second is</span><span class="pln">
+        </span><span class="com"># 'm' for mono or 's' for stereo. There doesn't seem to be a good</span><span class="pln">
+        </span><span class="com"># way to get VBR info out of mmpython, so currently this always</span><span class="pln">
+        </span><span class="com"># reports a fixed bit rate. We also have to kludge a bit because</span><span class="pln">
+        </span><span class="com"># some metdata sources give us bits/second while some give us</span><span class="pln">
+        </span><span class="com"># kilobits/second. And of course, there are multiple ways of</span><span class="pln">
+        </span><span class="com"># reporting stereo...</span><span class="pln">
+        kbps </span><span class="pun">=</span><span class="pln"> info</span><span class="pun">[</span><span class="str">'bitrate'</span><span class="pun">]</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> type</span><span class="pun">(</span><span class="pln">kbps</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">in</span><span class="pln"> </span><span class="pun">(</span><span class="pln">int</span><span class="pun">,</span><span class="pln"> float</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> kbps </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">:</span><span class="pln">
+            stereo </span><span class="pun">=</span><span class="pln"> bool</span><span class="pun">(</span><span class="pln"> </span><span class="pun">(</span><span class="pln">info</span><span class="pun">[</span><span class="str">'channels'</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> info</span><span class="pun">[</span><span class="str">'channels'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">or</span><span class="pln">
+                           </span><span class="pun">(</span><span class="pln">info</span><span class="pun">[</span><span class="str">'mode'</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> info</span><span class="pun">[</span><span class="str">'mode'</span><span class="pun">].</span><span class="pln">find</span><span class="pun">(</span><span class="str">'stereo'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> kbps </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">8000</span><span class="pun">:</span><span class="pln">
+                kbps </span><span class="pun">=</span><span class="pln"> kbps </span><span class="pun">//</span><span class="pln"> </span><span class="lit">1000</span><span class="pln">
+            details</span><span class="pun">[</span><span class="str">'bitrate'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="str">'fm'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'fs'</span><span class="pun">)[</span><span class="pln">stereo</span><span class="pun">]</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> str</span><span class="pun">(</span><span class="pln">kbps</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># If mmpython gives us a length it seems to always be in seconds,</span><span class="pln">
+        </span><span class="com"># whereas the Rio expects milliseconds.</span><span class="pln">
+        length </span><span class="pun">=</span><span class="pln"> info</span><span class="pun">[</span><span class="str">'length'</span><span class="pun">]</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> length</span><span class="pun">:</span><span class="pln">
+            details</span><span class="pun">[</span><span class="str">'duration'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> int</span><span class="pun">(</span><span class="pln">length </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1000</span><span class="pun">)</span><span class="pln">
+
+        </span><span class="com"># mmpython often gives track numbers as a fraction- current/total.</span><span class="pln">
+        </span><span class="com"># The Rio only wants the current track, and we might as well also</span><span class="pln">
+        </span><span class="com"># strip off leading zeros and such.</span><span class="pln">
+        trackNo </span><span class="pun">=</span><span class="pln"> info</span><span class="pun">[</span><span class="str">'trackno'</span><span class="pun">]</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> trackNo</span><span class="pun">:</span><span class="pln">
+            details</span><span class="pun">[</span><span class="str">'tracknr'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> int</span><span class="pun">(</span><span class="pln">trackNo</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">"/"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">])</span></code></pre>
+
+<p>Reference: <a href="http://svn.navi.cx/misc/trunk/rio-karma/python/RioKarma/Metadata.py" rel="nofollow">http://svn.navi.cx/misc/trunk/rio-karma/python/RioKarma/Metadata.py</a></p>
+
+<h2>Further:</h2>
+
+<ul>
+<li><a href="https://docs.python.org/2/tutorial/modules.html" rel="nofollow">Including Python modules</a></li>
+</ul>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/26127556" title="short permalink to this answer" class="short-link" id="link-post-26127556">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/26127556/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/26127556/revisions" title="show all edits to this post">edited <span title="2014-09-30 18:28:20Z" class="relativetime">Sep 30 '14 at 18:28</span></a>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-09-30 18:22:52Z" class="relativetime">Sep 30 '14 at 18:22</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="http://stackoverflow.com/users/1922144/davidcondrey"><div class="gravatar-wrapper-32"><img src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/1PBvA.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1922144/davidcondrey">davidcondrey</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 12,675" dir="ltr">12.7k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="85 bronze badges"><span class="badge3"></span><span class="badgecount">85</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-26127556" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-40998533" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks for the help. That was what I was looking for.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/469682/b-ryce" title="2,933 reputation" class="comment-user owner">b-ryce</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment40998533_26127556"><span title="2014-10-02 02:04:32Z" class="relativetime-clean">Oct 2 '14 at 2:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-40998651" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Glad it was helpful. Did you get your project working?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1922144/davidcondrey" title="12,675 reputation" class="comment-user">davidcondrey</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment40998651_26127556"><span title="2014-10-02 02:14:55Z" class="relativetime-clean">Oct 2 '14 at 2:14</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-26127556" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1277237960",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1277237960"><iframe id="ados_frame_adzerk1277237960_2641145" scrolling="no" height="90" frameborder="0" width="728"></iframe><img style="position:absolute;" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/i_002.gif" class="tpctbxnmxroryehiahyi" height="0px" border="0" width="0px"></div>
+  
+<a name="34576075"></a>
+<div id="answer-34576075" class="answer" data-answerid="34576075" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="34576075" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You should look at the os.stat functions
+<a href="https://docs.python.org/2/library/os.html" rel="nofollow">https://docs.python.org/2/library/os.html</a></p>
+
+<p>os.stat returns file creation and modified times ctime, mtime
+It should be something like this:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="typ">Import</span><span class="pln"> os
+st</span><span class="pun">=</span><span class="pln"> os</span><span class="pun">.</span><span class="pln">stat</span><span class="pun">(</span><span class="pln">full_file_path</span><span class="pun">)</span><span class="pln">
+file_ctime</span><span class="pun">=</span><span class="pln"> st</span><span class="pun">.</span><span class="pln">st_ctime
+</span><span class="kwd">print</span><span class="pun">(</span><span class="pln">file_ctime</span><span class="pun">)</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/34576075" title="short permalink to this answer" class="short-link" id="link-post-34576075">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/34576075/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-01-03 11:36:27Z" class="relativetime">Jan 3 at 11:36</span>
+    </div>
+    <div class="user-gravatar32 wb-hat-checked">
+        <a href="http://stackoverflow.com/users/2231641/kender99"><div class="gravatar-wrapper-32"><img src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/0a57f95179393bac6724a502a72eece7.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2231641/kender99">kender99</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">93</span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-34576075" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-34576075" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/25952291/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="25952291" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.co.uk/" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="af6f6239c7eabdfc13d790f53df5a3b1" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f25952291%2fhow-to-get-meta-data-with-mmpython-for-images-and-video%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                                    
+                                var $window = $(window),
+                                    onScroll = function(e) {
+                                        var $elem = $('.new-login-left'),
+                                            docViewTop = $window.scrollTop(),
+                                            docViewBottom = docViewTop + $window.height(),
+                                            elemTop = $elem.offset().top,
+                                            elemBottom = elemTop + $elem.height();							
+                                        if ((docViewTop < elemTop) && (docViewBottom > elemBottom))  {
+                                            StackExchange.using('gps', function() { StackExchange.gps.track('embedded_signup_form.view', { location: 'question_page' }); });
+                                            $window.unbind('scroll', onScroll);
+                                        }
+                                    };
+                                $window.on('scroll', onScroll);
+                                    
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f25952291%2fhow-to-get-meta-data-with-mmpython-for-images-and-video%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/metadata" class="post-tag" title="show questions tagged 'metadata'" rel="tag">metadata</a> <a href="http://stackoverflow.com/questions/tagged/jpeg" class="post-tag" title="show questions tagged 'jpeg'" rel="tag">jpeg</a> <a href="http://stackoverflow.com/questions/tagged/mp4" class="post-tag" title="show questions tagged 'mp4'" rel="tag">mp4</a> <a href="http://stackoverflow.com/questions/tagged/mov" class="post-tag" title="show questions tagged 'mov'" rel="tag">mov</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2014-09-20 19:01:41Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>248 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/25952291/how-to-get-meta-data-with-mmpython-for-images-and-video?lastactivity" class="lastactivity-link" title="2016-01-03 11:36:27Z">11 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk952549857",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk952549857"><a href="http://engine.adzerk.net/r?e=eyJhdiI6Nzg2NDMsImF0Ijo1LCJidCI6MCwiY20iOjM1Mjg4NiwiY2giOjExNzgsImNrIjp7fSwiY3IiOjEyOTY0NDEsImRpIjoiZTYzZTY1ZDIzZjUyNDU2OTg5NjZjYmUwMWY3Nzg1MGYiLCJkbSI6MSwiZmMiOjE0MjM4MTMsImZsIjo5OTE5MzEsImlwIjoiNS43MS4xODguMTUwIiwia3ciOiJweXRob24sbWV0YWRhdGEsanBlZyxtcDQsbW92IiwibWsiOiJweXRob24iLCJudyI6MjIsInBjIjo2LjUsImVjIjo2LjUsInByIjo3NjUsInJ0IjoyLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby51ay8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtZGRhNzE0Y2RkZGQyNDVjMGJiMjI4ZjlmMTc5YjZmYzEiLCJ6biI6NDUsInRzIjoxNDgyNjk0NDg1NzQwLCJiZiI6dHJ1ZSwicG4iOiJhZHplcms5NTI1NDk4NTciLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tL2NvbXBhbnkvdGVsZWZvbmljYSJ9&amp;s=lT9c9HSMTpMjHf4w657ktjLd8HU" rel="nofollow" target="_blank" title=""><img src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/678ebc1fef384f2b8c51ead6b83ab365.jpg" title="" alt="" class="tpctbxnmxroryehiahyi" height="250" border="0" width="300"></a><img style="position:absolute;" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/i.gif" class="tpctbxnmxroryehiahyi" height="0px" border="0" width="0px"></div>
+            <div id="hireme"></div>
+        <script>
+window.clcfl_request = 'AqlYXRT9LNQIAAAAACMAjAECAAAAAgAAAAAeAAAAfHB5dGhvbnxtZXRhZGF0YXxqcGVnfG1wNHxtb3Z8AJqx60eppuxrW3k';
+;(function(n){var t,r,i;try{if(typeof[].indexOf!="function")return;if(window.attachEvent&&!window.addEventListener)return;if(n.allowed[0]!=="*"&&n.allowed.indexOf(location.hostname)===-1)return;t=window;t.clc=t.clc||{};r=t.clc_request||t.clcfl_request;r||void 0;t.clc.init=t.clc.init||[];t.clc.init.push(function(n){return n.load()});t.clc.options=n;i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}catch(u){void 0}}).call(null, {"azw":true,"kt":2000,"autoload":true,"tto":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","blog.codinghorror.com","talent.stackoverflow.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/markup.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=c1d06cbc75b3"});        </script>
+			
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/10075115?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/10075115/call-exiftool-from-a-python-script?noredirect=1&amp;lq=1" class="question-hyperlink">Call exiftool from a python script?</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/2775165?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/2775165/is-it-possible-to-add-iptc-data-to-a-jpg-using-python-when-no-such-data-already?rq=1" class="question-hyperlink">Is it possible to add IPTC data to a JPG using python when no such data already exists?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/4770597?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/4770597/how-do-you-edit-video-id3-tags-in-python?rq=1" class="question-hyperlink">How do you Edit Video ID3 Tags in Python?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/9544699?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="http://stackoverflow.com/questions/9544699/how-can-i-get-a-video-meta-data-using-qt-phonon?rq=1" class="question-hyperlink">How can I get a video meta data using Qt phonon?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/11455128?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="http://stackoverflow.com/questions/11455128/ffmpeg-videos-before-and-after-conversion-arent-the-same-length?rq=1" class="question-hyperlink">ffmpeg: videos before and after conversion aren't the same length</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/15735716?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">6</div></a><a href="http://stackoverflow.com/questions/15735716/how-can-i-get-a-frame-sample-jpeg-from-a-video-mov?rq=1" class="question-hyperlink">How can I get a frame sample (jpeg) from a video (mov)</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/30794491?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/30794491/html5-videos-not-displaying?rq=1" class="question-hyperlink">Html5 videos not displaying</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/34076166?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/34076166/how-reliable-are-meta-tags-in-videos-for-user-submitted-videos?rq=1" class="question-hyperlink">How reliable are meta tags in videos for user submitted videos?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/35898770?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/35898770/ffmpeg-options-differences-between-two-videos?rq=1" class="question-hyperlink">FFMPEG options differences between two videos</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/36769579?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">3</div></a><a href="http://stackoverflow.com/questions/36769579/android-how-to-set-meta-data-to-mp4-file?rq=1" class="question-hyperlink">Android, how to set meta data to MP4 file?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/40493191?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/40493191/read-write-windows-media-created-date-of-mp4-files?rq=1" class="question-hyperlink">Read / Write Windows “Media Created” date of mp4 files</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="http://parenting.stackexchange.com/questions/28290/what-is-the-day-to-day-life-like-as-a-father" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the day to day life like as a father?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/34146/should-i-hold-my-breath-in-case-of-a-decompression" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I hold my breath in case of a decompression?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="http://parenting.stackexchange.com/questions/28255/parents-disagree-on-type-of-music-for-toddlers-listening" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Parents disagree on type of music for toddler's listening
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/2071503/are-these-two-statements-true-or-false" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are these two statements true or false?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/150801/method-for-validating-properties-based-on-passed-conditions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Method for validating properties based on passed conditions
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/41321731/why-narrowing-conversion-warning-appears-only-in-case-of-list-initialization" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why narrowing conversion warning appears only in case of list initialization?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/332681/what-exactly-is-dot-dot-why-its-behaviour-is-different-with-symlinks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    what exactly is dot dot (..)? Why its behaviour is different with symlinks?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/65574/how-do-they-move-puppets-inside-the-car" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do they move puppets inside the car?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/47115/consecutive-numbers-sum-of-a-number" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Consecutive Numbers Sum of a number
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/73973/how-much-effort-and-why-should-consumers-put-into-protecting-their-credit-card" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How much effort (and why) should consumers put into protecting their credit card numbers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/65629/could-aliens-colonize-earth-without-realizing-humans-are-people-too" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Could aliens colonize Earth without realizing humans are people too?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/2070222/does-having-a-finite-number-of-generators-each-having-finite-order-imply-that" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does having a finite number of generators, each having finite order, imply that the group is finite?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/84972/are-there-statistics-of-airports-by-flight-cancellation-rate" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there statistics of airports by flight cancellation rate?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/148227/why-did-it-take-longer-to-go-to-rivendell-in-the-hobbit-than-in-the-fellowship-o" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did it take longer to go to Rivendell in The Hobbit than in The Fellowship of the Ring?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/65300/where-should-a-galactic-capital-be" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Where should a galactic capital be?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-softwareengineering" title="Software Engineering Stack Exchange"></div><a href="http://softwareengineering.stackexchange.com/questions/338436/my-office-wants-infinite-branch-merges-as-policy-what-other-options-do-we-have" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My office wants infinite branch merges as policy; what other options do we have?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/148410/in-what-ways-does-worf-appeal-to-jadzia-dax-given-that-she-had-lots-of-suitors-t" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In what ways does Worf appeal to Jadzia Dax given that she had lots of suitors to choose from?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/300829/how-do-we-know-that-we-have-captured-the-entire-spectrum-of-the-harmonic-oscilla" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do we know that we have captured the entire 
+spectrum of the Harmonic Oscillator by using ladder operators?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-drupal" title="Drupal Answers"></div><a href="http://drupal.stackexchange.com/questions/223853/check-if-node-exists-from-nid" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:220 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Check if node exists from NID
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/146119/what-to-do-when-using-your-private-key-from-another-computer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What to do when using your private key from another computer?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/300046/explain-it-to-me-like-im-a-physics-grad-greenhouse-effect" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Explain it to me like I'm a physics grad: Greenhouse Effect
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/864384/ssh-logging-in-with-only-one-command" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    SSH - Logging in with only one command?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/47128/the-scrambled-riddle-clue-twenty" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The scrambled riddle - Clue Twenty
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/365030/word-that-mean-to-fill-the-air-with-a-bad-smell" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Word that mean "to fill the air with a bad smell"?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/25952291" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/25952291/ivc/4dce');});
+</script>
+<noscript>
+    <div><img src="/posts/25952291/ivc/4dce" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-py</div></div>
+
+
+        </div>
+    </div><script async="" src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/clc.js"></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://stackoverflow.blog/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="https://www.stackoverflowbusiness.com/advertise">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="4">
+                Technology
+            </th>
+            <th colspan="2">
+                Life / Arts
+            </th>
+            <th colspan="2">
+                Culture / Recreation
+            </th>
+            <th colspan="2">
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://softwareengineering.stackexchange.com/" title="professionals, academics, and students working within the systems development life cycle who care about creating, delivering, and maintaining software responsibly">Software Engineering</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Wolfram Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                        <li><a href="http://crypto.stackexchange.com/" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://codereview.stackexchange.com/" title="peer programmer code reviews">Code Review</a></li>
+                        <li><a href="http://magento.stackexchange.com/" title="users of the Magento e-Commerce platform">Magento</a></li>
+                        <li><a href="http://dsp.stackexchange.com/" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                        <li><a href="http://raspberrypi.stackexchange.com/" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                        <li><a href="http://codegolf.stackexchange.com/" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://music.stackexchange.com/" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://ell.stackexchange.com/" title="speakers of other languages learning English">English Language Learners</a></li>
+                        <li><a href="http://japanese.stackexchange.com/" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                        <li><a href="http://anime.stackexchange.com/" title="anime and manga fans">Anime &amp; Manga</a></li>
+                        <li><a href="http://mechanics.stackexchange.com/" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (17)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                        <li><a href="http://cs.stackexchange.com/" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://philosophy.stackexchange.com/" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="https://www.stackoverflowbusiness.com/talent">Stack Overflow Talent</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.12.24.1
+            </div>
+                </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('python,metadata,jpeg,mp4,mov');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+                ga('create', 'UA-5620270-1');
+                
+        ga('create', 'UA-5620270-59', 'auto', 'pageData');
+        
+                ga('set', 'dimension2', '|python|metadata|jpeg|mp4|mov|');                     ga('pageData.set', 'dimension2', '|python|metadata|jpeg|mp4|mov|');             ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<script src="python%20-%20How%20to%20get%20meta%20data%20with%20MMPython%20for%20images%20and%20video%20-%20Stack%20Overflow_files/markup.js" async=""></script></body></html>

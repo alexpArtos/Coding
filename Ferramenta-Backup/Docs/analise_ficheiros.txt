@@ -1,0 +1,81 @@
+Requisitos para aplicacao de arquivo de fotografias:
+
+capacidades do DirSyncPro:
+
+- eu so o uso num modo personalizado, de contribuicao para um arquivo.
+- neste modo, o programa:
+	* compara dois directorios raiz, A (origem) e B (destino)
+	* o objectivo e' actualizar B com os conteudos de A
+	* para cada ficheiro de A, o programa detecta se existe um equivalente em B na mesma posicao relativa (mesmo nome e mesmo caminho)
+	* se sim, analisa a data e o tamanho de ambas as versoes para tentar descobrir qual e' o mais actual.
+	
+- estados possiveis para um ficheiro de A:
+	* [NOVO] existe em A mas nao em B
+	* existe em ambos
+		- [IGUAL] as versoes sao iguais (mesmo tamanho e data)
+		- [IGUAL ?] data diferente mas tamanho igual. Se a data se desvia apenas por uma hora, e' possivel que sejam a mesma versao
+		- [ACTUALIZACAO] ficheiro em A e' mais recente
+		- [CONFLITO] ficheiro em B e' mais recente
+	* (noutros modos: existe em B mas nao em A)
+	
+- as opcoes de accao sao apenas:
+	* copiar de A para B
+	* nao fazer nada
+	* (noutros modos: copiar de B para A; apagar A; apagar B)
+	
+
+Extensoes que eu quero incluir:
+	
+- a principal alteracao que eu quero e' a capacidade de detectar que um ficheiro mudou de nome, mas ja existe no repositorio.
+- para isso, o meu criterio principal de fazer correspondencias entre A e B sera o hash do ficheiro, e nao o nome.
+- tambem quero aumentar as acoes disponiveis:
+	
+	
+- Novas accoes:
+	* renomear ficheiro e copiar. 
+	* copiar para outro destino relativo (tem de ser um destino novo).
+	* associar tags com um ou varios ficheiros
+	
+Para comparar ficheiros, vou usar dois criterios. Dois ficheiros sao iguais se tiverem o mesmo hash e tamanho.
+Mas agora temos de considerar o efeito de dois ficheiros poderem ter o mesmo nome completo e serem diferentes.
+
+Principio geral:
+	- se um ficheiro ja existe, nao necessita de ser copiado
+	- se um ficheiro foi actualizado, deve ser copiado
+	- se um ficheiro e' novo, deve ser copiado
+	
+O que muda agora e' a nocao de existencia, ja' que um ficheiro pode existir em mais de um sitio no repositorio.
+Assim sendo, a procura procede agora por hashes em vez de nomes de ficheiro.
+
+Para cada ficheiro em A:
+	- verifica-se se este ja existe no repositorio. O ficheiro existe se houver outro com o mesmo hash e o mesmo tamanho.
+	- o novo problema agora e' que pode haver conflito de localizacao, especialmente se um ficheiro teve de mudar de nome numa sincronizacao anterior.
+	- os estados sao estes:
+	
+		[NOVO]: nao existe nenhum ficheiro com o mesmo hash e tamanho e nao existe ficheiro com o mesmo nome completo (novo, local livre)
+		[CONFLITO]: podem ser de varios tipos. Nestes casos, deve-se sempre dar a opcao ao utilizador.
+			* (novo, local ocupado): existe um ficheiro no mesmo sitio, mas dado que este e' diferente, pode ser uma versao nova ou um ficheiro completamente diferente.
+			* (existe, local ocupado por ficheiro diferente): o ficheiro existe no repositorio, mas nao no mesmo local onde ele esta. Este local esta ocupado mas por um ficheiro diferente.
+		[IGUAL]: ficheiro existe na mesma localizacao com mesmo hash e tamanho (existe, local ocupado por ficheiro igual)		
+		[COPIA]: ficheiro existe mas noutro local (existe, local livre)
+			
+	- Deixa de ser relevante:
+		[ACTUALIZACAO]: como agora permitimos expressamente que os ficheiros sejam renomeados, ja nao e' possivel identificar actualiacoes. Um ficheiro no mesmo local pode ser um ficheiro completamente diferente.
+		
+				
+Opcoes do utilizador num conflito:
+	- pre-visualizar ambos os ficheiros
+	- abrir ambos os ficheiros no explorer
+	- nao copiar
+	- renomear o ficheiro de A
+	- escolher um novo directorio de destino para o ficheiro de A
+	- copiar depois de feitas as alteracoes nas opcoes anteriores
+	
+Opcoes pre-definidas:
+	- [NOVO]: copiar
+	- [CONFLITO-NOVO]: nao fazer nada
+	- [CONFLITO-EXISTENTE]: nao fazer nada
+	- [IGUAL]: nao fazer nada
+	- [COPIA]: nao fazer nada
+	
+	

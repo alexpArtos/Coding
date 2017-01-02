@@ -1,0 +1,40 @@
+Porque um repositorio?
+
+- esta opcao nao e' evidente: no limite, um directorio pode ser comparado com outro sem precisar de nenhuma informacao auxiliar
+- o repositorio aparece como uma solucao para comparar ficheiros quando a estrutura de um lado e do outro nao e' igual: pode acontecer que ficheiros tenham sido movidos de um lado para o outro no lado consolidado e que por isso um ficheiro que aparenta ser novo possa afinal nao o ser
+- este ficheiro deve entao ser comparado realmente com todo o lado consolidado e sem poder usar a sua localizacao como indice: a possibilidade que eu encontrei foi o hash do seu conteudo.
+- isto sugere que os hashes de todos os ficheiros estejam guardados num dicionario
+- dado que e' caro computar o hash, este deve ficar guardado nalgum lado: temos por exemplo o ficheiro do repositorio, ou um tag dentro do ficheiro.
+- ter as duas coisas pode levar a problemas de sincronizacao. O primario sera o tag no ficheiro, mas e mais facil usar o ficheiro do repositorio durante a analise. 
+- o processo de utilizacao pode ser entao assim: periodicamente o utilizador faz um recalculo do repositorio, se o ficheiro ja tiver um hash calculado le-o directamente em vez de o tornar a calcular.
+
+Repositorio:
+
+- duas alternativas: ou usar uma base de dados onde fica tudo escrito, ou um sistema de ficheiros, em que um ficheiro inicial indica a lista de repositorios e onde eles estao colocados, e depois cada repositorio e representado num unico ficheiro. 
+
+- o conteudo de um ficheiro-repositorio inclui a lista de todos os ficheiros ai registados, usando como chave o seu hash. Pode incluir ainda o seu tamanho e a data de modificacao, ja que estes podem ser usados para comparar versoes
+- o objectivo e ler estes dados para um dicionario durante a comparacao de ficheiros, para poupar o tempo de calcular o hash do repositorio e poder mais facilmente descobrir se um ficheiro mudou de nome ou localizacao. Para maior mobilidade, estas localizacoes devem ser relativas ao endereco do repositorio.
+
+A vantagem do sistema de ficheiros e:
+- nao ter de aprender uma tecnologia nova (o que tambem pode ser visto como desvantagem)
+- poder muito facilmente modificar o repositorio e mudar a sua localizacao mudando apenas o primeiro ficheiro de indice.
+
+Embora tivesse esta ideia previamente, acho melhor nao incluir para ja um mecanismo de hashes por cada sub-directorio: o objectivo era reduzir o esforco de calculo do repositorio quando alguns ficheiros ou directorios mudarem de local dentro daquele. No entanto, isto pode juntar muita complexidade tanto ao ficheiro-repositorio em si como ao codigo.
+Em todo o caso, isto pode ser adicionado mais tarde.
+
+
+- Os ficheiros dentro de um repositorio devem ser representados sempre de forma relativa, para permitir mover o repositorio sem ter de o alterar
+- Faz sentido a lista de repositorios dentro do ficheiro mestre ser tambem relativa? Nao! Os repositorios podem estar em qualquer lado, provavelmente nunca estarao debaixo do sitio onde a ferramenta estiver instalada.
+
+
+Eventos:
+- acho que os modelos nao estao bem montados: alteracoes ao valor de um repositorio deviam mudar imediatamente os valores na caixa de texto e nas linhas correspondentes da seleccao. Nada disto esta a acontecer, e eu tenho de fazer as alteracoes localmente.
+- o que esta a acontecer de facto e apenas isto: alteracoes ao QStandardItemModel sao visiveis logo na lista, o que quer dizer, insercoes, alteracoes, etc.
+- porem, o QStandardItem devia ser um repositorio e nao um standardItem.
+- e da mesma forma, a caixa de texto devia ser um repositorio e nao um texto simples.
+
+Assim, quando o repositorio mudasse, estes tambem mudariam de valor.
+
+Tenho de descobrir como fazer isto. Caso contrario, terei de implementar algo como eventos: a caixa de texto e o QStandardItem subscrevem eventos de alteracoes no repositorio em si, e sempre que as propriedades destes forem alteradas, o evento respectivo e' disparado.
+
+

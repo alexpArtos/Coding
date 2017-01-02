@@ -1,0 +1,95 @@
+Python:
+
+- Photographs Manager
+
+==================
+
+Tarefa 1: Pagina Principal:
+
+	* criar um repositorio a partir de um directorio existente
+	* mostrar lista de repositorios disponiveis
+	* escolher um repositorio e um directorio de origem
+------------------------------------------------------------------
+
+Tarefa 2: Analisar ficheiros e detectar conflitos
+
+
+	Proximas:
+		* Analise de directorio. Dividi isto em tres tarefas:
+			1. ler o repositorio do seu ficheiro para a memoria. Isto deve devolver um objecto de tipo Repositorio. Isto e' iniciado pelo RepositoryManager que devolve um Repositorio. [ok]
+			2. invocar a analise do directorio a partir da classe repositorio. Devolve uma lista de matches, com as varias categorias
+				- tenho o teste pronto.
+				- agora falta implementar a analise em si
+				- tambem: colocar no github
+			3. apresenta os resultados
+
+		* A classe CRepositoryManagere complexa, e acumula talvez duas funcoes diferentes.  
+		* Em todo o momento, ela conhece os repositorios disponiveis, e pode retornar um repositorio a partir de uma localizacao. Isto facilita muito a implmentacao do ponto 1.: obtem o repositorio para a localizacao no UI, e invoca a leitura do ficheiro nesse mesmo repositorio
+		* Isto implica passar as funcoes loadRepoFile e registerItem para CRepository, ao mesmo tempo passando o dicionario correspondente tambem para ai. Acho que ainda vamos precisar de outro dicionario: para a localizacao
+				
+	
+		* mover a leitura do repositorio de CRepositoryManager para CRepository
+		* percorrer um directorio e detectar o estado de cada ficheiro perante o repositorio
+
+	
+	Comparacao:
+		* ha quatro/cinco estados que eu quero registar:
+			* notas gerais: 
+			* "ficheiro existe": hash do ficheiro existe no repositorio, e o tamanho dos ficheiros encontrados e' igual
+			* "localizacoes iguais": o caminho relativo (em relacao ao repositorio e ao directorio fonte) e' o mesmo.
+			- ficheiro existe no mesmo local que outro ficheiro igual
+			- ficheiro existe no mesmo local que um ficheiro diferente
+			- ficheiro existe, mas todas as suas localizacoes sao diferentes da fonte
+			
+			- ficheiro novo, mas existe um ficheiro diferente na mesma localizacao
+			- ficheiro nao existe e a sua localizacao nao esta a ser usada.
+			
+		* Opcoes para cada estado.
+			* Ficheiro novo: queremos adicionar ao repositorio.
+				- localizacao nova: copiar sempre
+				- localizacao ocupada: nao fazer nada, renomear um dos ficheiros, sobrepor, ou mover. Opcao de sobrepor e perigosa, mas deve ser dada porque isto pode ser uma versao nova do mesmo ficheiro. Mostrar data e tamanho.
+			* Ficheiro existe:
+				- no mesmo local que um ficheiro igual: nao fazer nada
+				- mas num local novo: opcao de copiar, nao fazer nada (default - pre-definicao)
+				- mas no mesmo local que um ficheiro diferente: pode ser uma versao nova ou algo genuinamente diferente: nao fazer nada, renomear um dos ficheiros, sobrepor, ou mover. Pre-definicao: nao fazer nada.
+			* Em todos os casos deve haver ainda a hipotese de adicionar tags a um RepositoryItem, descrevendo a fotografia. Por exemplo, local, data, ocasiao descrita, etc. Deve ser possivel ter varios tags em cada ficheiro.
+			* Idealmente, seria depois possivel usar estes tags no explorer para filtrar e ordenar ficheiros.
+				
+		* Resumo:
+			* se a localizacao esta ocupada e o ficheiro e diferente:
+				nao fazer nada, renomear um dos ficheiros, sobrepor, ou mover.
+			* novo num local livre:
+				copiar
+			* existente num local livre:
+				nao fazer nada, copiar
+			* existente e local coincidente:
+				nao fazer nada
+			
+	
+	Tags:		
+		* nao ha tags (ou metadados) nos ficheiros. Nao ha forma generica de o fazer, e por isso nao faco. Em vez disso, a informacao e guardada no ficheiro repositorio. 
+		* Valera a pena tambem criar um ficheiro nos directorios ja arquivados? Para ja acho que nao.
+		* Por isso, o repositorio sera' o ponto central para analisar os ficheiros
+		
+		> repositorio esta pronto
+		> atravessar directorio fonte e registar conflitos.
+		> criar um modelo apropriado
+		> decidir qual o melhor UI
+		
+		
+		
+	Idea:
+		* the central piece of information is the directory location: a repo is only relevant to the files under it.
+		* a repo has a description associated to it, but that's all: a description. Descriptions might not be unique
+		* I don't want to create directories from scratch: so a repo is only created in an existing directory. 
+		* it does not make sense to have a directory different from the repo index, so a repo should always be kept synchronized. 
+		* That begins at creation: a repo should always be created from a directory
+		
+	* It makes sense to remove a repo
+	* It makes sense to update a repo: there are two functions here: change description, or recompute.
+	
+	* when deciding to create a repo at a place, if the file already exists it should do a repair instead
+	
+	* repo master file: this is read to memory at the start, and should stay untouched until we exit the application. All changes to the model are done in memory, and instead of recreating the file each time (to remove old repositories, not so necessary to adding new ones) we can just recreate it at the end if there was any change
+	
+	
