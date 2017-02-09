@@ -16,7 +16,9 @@ from PyQt5.QtGui import QStandardItemModel
 
 from controls import *
 from CRepoManager import CRepositoryManager
-from PyQt5.QtWidgets import QGroupBox, QListView, QWidget, QApplication, QAbstractItemView
+from CTreeItem import TreeItem
+from CTreeModel import TreeModel
+from PyQt5.QtWidgets import QGroupBox, QListView, QWidget, QApplication, QAbstractItemView, QTreeView
 
 class CMainWindow(QWidget):
 	def __init__(self):
@@ -65,6 +67,24 @@ class CMainWindow(QWidget):
 		
 		self.txtRepo = CTextWithLabel("Selected Repository", "", self.box2)
 		self.txtRepo.setGeometry(10,250,385,20)	
+		
+		# Define experiment Tree View
+		self.treeView = QTreeView(self)	
+		
+		item0 = TreeItem([r"Source", "Action", r"Target"])
+		
+		standardModel = TreeModel(item0)
+		self.treeView.setModel(standardModel)
+		
+		item1 = TreeItem([r"Path 1\File1", False, r"PathA\File1"])
+		item2 = TreeItem([r"Path 1\File2", False, r"PathA\File2"])
+		item0.appendChild(item1)
+		item0.appendChild(item2)
+		
+		print standardModel.rowCount()
+		print standardModel.columnCount()
+
+		
 		
 	def __initializeStructures(self):
 		# create repository manager

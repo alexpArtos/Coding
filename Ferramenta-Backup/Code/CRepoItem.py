@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from utils import hashFile
 
@@ -19,7 +20,7 @@ class CRepositoryItem:
 		return self.__location
 		
 	def locationRelative(self, repoLocation):
-		return os.path.relpath(self.location(),os.path.dirname(repoLocation))
+		return utils.relativePath(self.location(), os.path.dirname(repoLocation))	
 	
 	def hash(self):
 		return self.__hash

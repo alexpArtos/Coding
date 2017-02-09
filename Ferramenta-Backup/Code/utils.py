@@ -69,3 +69,5 @@ def fileExists(filename):
 def defaultLocation():
 	return os.getcwd();
 	
+def relativePath(path, baseLocation):
+	return os.path.relpath(path, baseLocation)

@@ -1,0 +1,41 @@
+CTreeItem:
+	void def appendChild(self, CTreeItem):
+
+	CTreeItem def child(self, int):
+	CTreeItem parent(self):
+
+	int row(self):
+	int childCount(self):
+	int columnCount(self):
+
+	QVariant data(self, int):
+	void  setData(self, int, QVariant):		
+
+	void computeChecked(self):		
+
+
+CTreeModel:
+	int columnCount(self, QModelIndex): --> CTreeItem.columnCount
+	int rowCount(self, QModelIndex):
+	
+	QVariant data(self, QModelIndex, Role): --> CTreeItem.data
+	bool setData(self, QModelIndex, QVariant, Role): --> CTreeItem.setData
+	String headerData(self, int, Orientation, Role):
+
+
+	QModelIndex parent(self, QModelIndex):
+	QModelIndex index(self, int, int, QModelIndex): --> self.createIndex(int, int, CTreeItem)
+		the last argument of createIndex is the item that the index will point to, and return with internalPointer().
+	
+	void refreshNode(self, QModelIndex):
+	void refreshFromNodeToRoot(self, QModelIndex):
+	void refreshChildren(self, QModelIndex):
+
+	bool hasChildren(self, QModelIndex): --> CTreeItem.childItems == []	
+			
+	Flags flags(self, QModelIndex):
+
+
+
+
+
