@@ -1,0 +1,76 @@
+Ferramenta de gestao de fotografias:
+
+	- interface de resolucao de conflitos
+	
+* apos a analise dos directorios, e da escrita de resultados, estes devem ser apresentados para permitir as seguintes opcoes:
+
+- copiar ou nao copiar
+- modificar o directorio de destino
+- juntar novos tags a um conjunto de varios ficheiros
+- seleccionar um directorio inteiro (para modificacao de operacao, ou escrita de novos tags)
+- renomear um ficheiro de origem ou destino
+- abrir ambos os ficheiros no explorer
+- pre-visualizar ambos os ficheiros
+
+* nao existe para ja a opcao de remover um tag
+
+
+Interface sugerido:
+
+- uma lista de linhas ou uma arvore, conforme for mais facil / possivel
+- uma linha por cada ficheiro no directorio origem, mas tambem por cada directorio:
+	* ficheiros de um mesmo directorio sao listados todos seguidos e imediatamente abaixo da entrada do seu directorio
+	* quando o valor da checkbox do directorio e' alterado, o mesmo e' reflectido em todos os elementos do directorio, incluindo outros sub-directorios (de forma recursiva)
+- conteudo de cada linha:
+	* uma checkbox para seleccionar a linha. Isto permite seleccao multipla sem corrermos o risco de perdermos a seleccao quando perdemos o foco (o que acontece muito facilmente)
+	* caminho absoluto do ficheiro de origem
+	* caminho absoluto do ficheiro de destino, dentro do repositorio
+		* este caminho e mostrado numa caixa com escolha de directorio
+		* existe tambem a possibilidade de mudar o nome de ficheiro: carregando numa tecla especial (eg. F2), clicando e escrevendo directamente, etc
+	* botao de copia (verde: copiar; ou vermelho: nao copiar)
+
+- comportamentos associados:
+	* mouseover / hover: apresentar uma preview, com a lista de tags por baixo, numa especie de tooltip
+	* menu de contexto: juntar um ou mais tags a todos os ficheiros seleccionados
+	* abrir ambos os ficheiros no explorer
+
+- botoes de accao:
+	* processar
+	* escolher novo directorio de destino para todos os ficheiros seleccionados
+	
+- codificacao por cores do tipo de correspondencia:
+	* NOVO: origem verde, destino em branco
+	* IGUAL: origem preto, destino preto
+	* COPIA: origem vermelho, destino em branco
+	* CONFLITO_NOVO: origem verde, destino vermelho
+	* CONFLITO_EXISTE: origem vermelho, destino vermelho
+	
+	
+---------------------------------------------------------------
+
+Numa primeira abordagem, parece-me que posso fazer um TreeItem com apenas tres colunas: caminho de origem, caminho de destino e uma coluna central para a accao a realizar.	
+	
+================================================
+
+Tarefas:
+	* fazer um TreeItem: definir todos os controlos que quero mostrar em cada coluna
+	* fazer um TreeModel
+Prototipo:
+	* criar uma hierarquia [ok]
+	* praticar com roles:
+		* fazer cada linha checkablen [ok]
+		* fazer as celulas de texto editaveis [ok]
+	* adaptar para sistema de ficheiros:
+		* considerar o resultado de um walk e criar a hierarquia a partir dai [ok]
+		* checks parciais num directorio
+		* propagar checks para baixo ou para cima		
+	* criar delegados para representar dados de forma diferente do default:
+		* permitir um control diferente para escolher Folders
+		* substituir a accao por um botao com cores
+		* fazer uma tooltip com imagem
+
+	
+---> Apresentar uma imagem em Tooltip:
+	* usar o papel Qt.DecorationRole e devolver um PySide.QtGui.QPixmap.
+	* PySide.QtGui.QPixmap e' uma imagem e pode ser representada num PySide.QtGui.QLabel (propriedade pixmap) ou num PySide.QtGui.QAbstractButton (propriedade icon).
+	

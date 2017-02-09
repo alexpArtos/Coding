@@ -78,4 +78,6 @@ Opcoes pre-definidas:
 	- [IGUAL]: nao fazer nada
 	- [COPIA]: nao fazer nada
 	
+----------------------------------------------------
+
 	

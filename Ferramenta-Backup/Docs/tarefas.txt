@@ -9,6 +9,7 @@ Tarefa 1: Pagina Principal:
 	* criar um repositorio a partir de um directorio existente
 	* mostrar lista de repositorios disponiveis
 	* escolher um repositorio e um directorio de origem
+	+ Falta: escolher um sub-directorio dentro do repositorio
 ------------------------------------------------------------------
 
 Tarefa 2: Analisar ficheiros e detectar conflitos
@@ -21,7 +22,7 @@ Tarefa 2: Analisar ficheiros e detectar conflitos
 				- tenho o teste pronto.
 				- agora falta implementar a analise em si
 				- tambem: colocar no github
-			3. apresenta os resultados
+			3. apresentar os resultados
 
 		* A classe CRepositoryManagere complexa, e acumula talvez duas funcoes diferentes.  
 		* Em todo o momento, ela conhece os repositorios disponiveis, e pode retornar um repositorio a partir de uma localizacao. Isto facilita muito a implmentacao do ponto 1.: obtem o repositorio para a localizacao no UI, e invoca a leitura do ficheiro nesse mesmo repositorio
