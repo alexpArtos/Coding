@@ -13,6 +13,7 @@ import pdb
 import os
 import hashlib
 import re
+from pathlib import Path
 
 from PyQt5.QtWidgets import QMessageBox, QFileDialog, QInputDialog, QLineEdit
 
@@ -62,6 +63,17 @@ def hashFile(filename):
 
    # return the hex representation of digest
    return h.hexdigest()
+
+def getDataFile(filename):
+	pathObj = Path(filename)
+	stats = pathObj.stat()
+	fileSize = stats.st_size
+	fileModified = stats.st_mtime # time of last modification in seconds
+	fileHash = hashFile(filename)
+	return (fileSize, fileModified, fileHash)
+
+def getPath(filename):
+	return os.path.dirname(filename)
 
 def fileExists(filename):
 	return os.path.exists(filename)

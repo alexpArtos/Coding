@@ -9,8 +9,6 @@ Application to create a consolidated backup of photographs from different source
 author: Alexandre Pinto
 """
 
-import pdb
-import sys, os
 
 from PyQt5.QtWidgets import QLineEdit, QPushButton, QLabel, QStyle, QFileDialog
 

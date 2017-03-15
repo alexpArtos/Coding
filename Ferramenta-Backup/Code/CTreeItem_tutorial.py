@@ -1,7 +1,6 @@
 from PyQt5.QtGui import QStandardItem
 from PyQt5.QtCore import Qt, QVariant
 import pdb
-from CRepo import CRepository 
 
 class TreeItem(object):
 	def __init__(self, data, parent=None):
@@ -21,18 +20,16 @@ class TreeItem(object):
 			self.checked = Qt.Checked
 		else:
 			self.checked = Qt.Unchecked
-	
+
+		if data[2]:
+			self.action = Qt.Checked
+		else:
+			self.action = Qt.Unchecked
+			
 		self.source = data[1]
-		self.match = data[2]		
 		self.target = data[3]
 		self.type = data[4]
 		self.copyList = data[5]
-
-		if (self.match == CRepository.Matches.NEW):					
-			self.action = Qt.Checked
-		else: 
-			self.action = Qt.Unchecked
-
 	
 		if parent is not None:
 			parent.appendChild(self)
@@ -94,21 +91,6 @@ class TreeItem(object):
 				self.type = value
 		except IndexError:
 			return None		
-
-	def getTargetPath(self):
-		if (self.match == CRepository.Matches.NEW or
-			self.match == CRepository.Matches.COPY):
-			# target location is free
-			return ""
-		else:
-			return self.target
-			
-
-	def matchResult(self):
-		return self.match
-
-	def copies(self):
-		return self.copyList
 			
 	def computeChecked(self):
 		state = None

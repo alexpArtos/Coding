@@ -8,17 +8,15 @@ Application to create a consolidated backup of photographs from different source
 
 author: Alexandre Pinto
 """
-
-import pdb
-import sys, os
+import os, sys
 
 from PyQt5.QtGui import QStandardItemModel
 
-from controls import *
-from CRepoManager import CRepositoryManager
-from CTreeItem import TreeItem
+from controls import CDirText, CTextWithLabel
+from CResultsWindow import CResultsWindow
 from CTreeModel import TreeModel
-from PyQt5.QtWidgets import QGroupBox, QListView, QWidget, QApplication, QAbstractItemView, QTreeView
+from PyQt5.QtWidgets import QGroupBox, QListView, QWidget, QApplication, QAbstractItemView, QPushButton
+from CRepoManager import CRepositoryManager
 
 class CMainWindow(QWidget):
 	def __init__(self):
@@ -29,10 +27,10 @@ class CMainWindow(QWidget):
 		self.__setUIBehaviour()
 		self.repoManager.loadRepositories()
 		self.__selectedRepo = None
-
+		
 	def __createUI(self):
 		# ---------------- UI ----------------------
-		self.setGeometry(600, 30, 800, 800)
+		self.setGeometry(300, 100, 800, 400)
 		self.setWindowTitle("Files Locations")
 
 		# ---------------- Variables ------------------------
@@ -67,25 +65,7 @@ class CMainWindow(QWidget):
 		
 		self.txtRepo = CTextWithLabel("Selected Repository", "", self.box2)
 		self.txtRepo.setGeometry(10,250,385,20)	
-		
-		# Define experiment Tree View
-		self.treeView = QTreeView(self)	
-		
-		item0 = TreeItem([r"Source", "Action", r"Target"])
-		
-		standardModel = TreeModel(item0)
-		self.treeView.setModel(standardModel)
-		
-		item1 = TreeItem([r"Path 1\File1", False, r"PathA\File1"])
-		item2 = TreeItem([r"Path 1\File2", False, r"PathA\File2"])
-		item0.appendChild(item1)
-		item0.appendChild(item2)
-		
-		print standardModel.rowCount()
-		print standardModel.columnCount()
-
-		
-		
+				
 	def __initializeStructures(self):
 		# create repository manager
 		self.repoManager = CRepositoryManager(self)
@@ -152,7 +132,7 @@ class CMainWindow(QWidget):
 			self.txtRepo.setText("")
 			self.txtRepo.setToolTip("")
 			
-	def __handleAnalyse(self):
+	def __handleAnalyse(self):	
 		''' This function makes the analysis between the selected repository and the source directory
 			It should then open a window to present the results
 			These should be placed in a model, similarly to what we do with repositories, albeit a much more complex one
@@ -169,12 +149,14 @@ class CMainWindow(QWidget):
 		# after we have the repository loaded and indexed,
 		# we need to walk through the folder 
 		# and compute its status within the repository
-		matches = repo.analyse(self.txtSource.tetx())
-		
-		displayMatchResults(matches)
+		sourceFolder = self.txtSource.text()
+		matches = repo.analyse(sourceFolder)
+		self.matchWindow = CResultsWindow()
+		self.matchWindow.loadResults(matches, os.path.dirname(repo.location()), sourceFolder)
+		self.matchWindow.show()
+	
 	
 if __name__ == '__main__':
-    
 	app = QApplication(sys.argv)
 	main = CMainWindow()
 	main.show()	

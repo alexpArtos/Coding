@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from utils import hashFile
+import utils
 
 class CRepositoryItem:
 	def __init__(self, location="", size="", modified=None, hash="", tags=[]):
@@ -14,7 +14,7 @@ class CRepositoryItem:
 	@classmethod	
 	def fromFile(self, filename):
 		self.__location = filename
-		(self.__size, self.__modified, self.__hash) = getDataFile(filename)
+		(self.__size, self.__modified, self.__hash) = utils.getDataFile(filename)
 		
 	def location(self):
 		return self.__location
@@ -34,13 +34,3 @@ class CRepositoryItem:
 	def tags(self):
 		return self.__tags
 		
-		
-	@staticmethod
-	def getDataFile(filename):
-		pathObj = Path(filename)
-		stats = pathObj.stat()
-		fileSize = stats.st_size
-		fileModified = stats.st_mtime # time of last modification in seconds
-		fileHash = hashFile(filename)
-		return (fileSize, fileModified, fileHash)
-

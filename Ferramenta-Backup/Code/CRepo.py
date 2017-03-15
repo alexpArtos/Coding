@@ -97,29 +97,28 @@ class CRepository:
 		else:
 			raise KeyError("Duplicate key: " + path)
 		
-	def analyse(self, basepath):
-		''' This function walks through all files in path,
-			and for each of them detects its state in respect to the repository.
-			It stores this state in a dictionary keyed by the file name
-		'''
-		
+	def analyseSubFolder(self, repoSubPath, basepath):
 		# for each file,
 		# compute its hash and size
 		# obtain all entries with the same hash and size
 		# check if there is a file in that location
 
-		print("Analysing path {0}".format(basepath))
-		
+		print("Analysing path {0} for repository sub-folder {1}".format(basepath, repoSubPath))
 		matches = []
 		for path, subdirs, files in os.walk(basepath):			
 			for name in files:
 				filename = os.path.normpath(os.path.join(path, name))
+				# obtains relative of filename inside basepath.
 				relpath = utils.relativePath(filename, basepath)
-				(fileSize, fileModified, fileHash) = CRepositoryItem.getDataFile(filename)
+				(fileSize, fileModified, fileHash) = utils.getDataFile(filename)
 						
 				(exists, hashList) = self.getHashesIfFileExists(fileHash, fileSize)
-				locationType = self.matchFilepathInRepo(relpath, hashList)
-								
+				# checks if this file exists in the repository.
+				# it does this by looking at the relative path of the file from the repository's root
+				repoPath = os.path.join(repoSubPath, relpath)
+				locationType = self.matchFilepathInRepo(repoPath, hashList)
+				
+				
 				if not exists:
 					if locationType == CRepository.RepoPath.FREE:
 						category = CRepository.Matches.NEW
@@ -132,10 +131,21 @@ class CRepository:
 						category = CRepository.Matches.EXISTING
 					elif locationType == CRepository.RepoPath.DIFFERENT:
 						category = CRepository.Matches.CONFLICT_EXIST
-				matches.append((filename , category))
+				matches.append((filename, category, hashList))
 			# end for
 		# end for
 		return matches
+		
+		
+	def analyse(self, basepath):
+		''' This function walks through all files in path,
+			and for each of them detects its state in respect to the repository.
+			It stores this state in a dictionary keyed by the file name
+		'''
+	
+		print("Analysing path {0}".format(basepath))
+		return self.analyseSubFolder("", basepath)
+		
 					
 	def matchFilepathInRepo(self, path, hashList):
 		''' returns a member of RepoPath comparing path in the repo and in the file system

@@ -70,7 +70,7 @@ def printTree(treeItem, tab, model):
 		row = -1
 	else:
 		row = treeItem.row()
-		index = model.createIndex(row, 0, treeItem.parentItem)		
+		index = model.createIndex(row, 0, treeItem.parentItem)
 	print("{0}{1} --- {2} [{3}, {4}, {5}]".format(prefix,treeItem,index, row, 0, treeItem.parentItem))
 	for item in treeItem.childItems:
 		printTree(item, tab+1, model)
@@ -82,14 +82,12 @@ class CMainWindow(QWidget):
 
 	def __createUI(self):
 		# ---------------- UI ----------------------
-		self.setGeometry(400, 30, 600, 400)
+		self.setGeometry(0, 30, 1370, 750)
 		self.setWindowTitle("Files Locations")
 
 		
 		# Define experiment Tree View
 		self.treeView = QTreeView(self)	
-		self.treeView.setMinimumWidth(700)
-		self.treeView.setMinimumHeight(500)
 
 		item0 = TreeItem(["Selected", r"Source", "Action", r"Target",r"Type"])
 		dir0 = TreeItem([False, r"Path 1", False, r"PathA", "D"], item0)
@@ -126,6 +124,9 @@ class CMainWindow(QWidget):
 		
 		# standardModel = TreeModel(rootNode) 
 		standardModel = TreeModel(item0)
+
+		self.treeView.setMinimumWidth(1370)
+		self.treeView.setMinimumHeight(750)
 		
 		printTree(item0, 0, standardModel)		
 		

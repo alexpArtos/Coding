@@ -1,10 +1,9 @@
-from PyQt5.QtGui import QStandardItemModel, QColor, QBrush, QFont
+from PyQt5.QtGui import QStandardItemModel, QColor, QBrush
 from PyQt5.QtCore import Qt, QVariant, pyqtSignal, QModelIndex
 from PyQt5 import QtCore
 # import pdb
 
 from CTreeItem import TreeItem
-from CRepo import CRepository
 
 # general notes:
 # the model is constantly playing a dance between indices and TreeItems
@@ -42,87 +41,35 @@ class TreeModel(QtCore.QAbstractItemModel):
 		'''
 		if not index.isValid():
 			return None
-		if role == QtCore.Qt.DisplayRole or role == QtCore.Qt.EditRole:			
+		if role == QtCore.Qt.DisplayRole or role == QtCore.Qt.EditRole:
 			if index.column() == 2:
-				item = index.internalPointer()
-				if item.data(2):
-					return "COPY"
-				else:
-					return "No Action"
-			elif index.column() == 3:
-				item = index.internalPointer()
-				return item.getTargetPath()
+				result = ""
+				name = str(index)
+				parent = str(self.parent(index))
+				return "Name: {0}\nParent: {1}".format(name, parent)
 			elif index.column() > 0 and index.column() < 4:
 				item = index.internalPointer()
 				return item.data(index.column())
 			else:
 				return ""
 		elif role == QtCore.Qt.ToolTipRole:
-			if index.column() == 2:
-				item = index.internalPointer()
-				match = item.matchResult()
-				
-				if match == CRepository.Matches.NEW:
-					return "New file"
-				elif match == CRepository.Matches.EXISTING:
-					return "File exists"
-				elif match == CRepository.Matches.COPY:
-					return "Copy of existing file"
-				elif match == CRepository.Matches.CONFLICT_NEW:
-					return "New file at existing location"
-				elif match == CRepository.Matches.CONFLICT_EXIST:
-					return "Different file at existing location"
-				else:
-					return ""
-			else:
-				item = index.internalPointer()
-				copyList = item.copies()
-				tooltip = "\n".join(map(lambda repo: repo.location(), copyList)) 
-				return tooltip
+			return self.indexToStr(index)
 		elif role == QtCore.Qt.CheckStateRole:
 			if index.column() == 0:
 				item = index.internalPointer()
 				return item.data(index.column())
 		elif role == QtCore.Qt.ForegroundRole:
-			red = QBrush(QColor(224,0,0))
-			green = QBrush(QColor(0,192,32))
-			blue = QBrush(QColor(0,0,128))
-			
-			item = index.internalPointer()
-			match = item.matchResult()
-			if match == CRepository.Matches.NEW:
-				if index.column() == 1:
-					return green								
-			elif match == CRepository.Matches.EXISTING:
-				if index.column() == 1 or index.column() == 3:
-					return blue
-			elif match == CRepository.Matches.COPY:
-				if index.column() == 1:
-					return red
-			elif match == CRepository.Matches.CONFLICT_NEW:
-				if index.column() == 1:
-					return green
-				elif index.column() == 3:
-					return red
-			elif match == CRepository.Matches.CONFLICT_EXIST:
-				if index.column() == 1 or index.column() == 3:
-					return red				
-			else:
-				return QVariant()
-		elif role == QtCore.Qt.FontRole:
 			item = index.internalPointer()
 			type = item.data(4)
 			if type == "D":
-				font = QFont()
-				font.setBold(True)				
-				return font
+				#red = QBrush(QColor(100,0,0))
+				red = QBrush(Qt.red)
+				return red
 			elif type == "F":
-				font = QFont()
-				font.setBold(False)				
-				return font
+				blue = QBrush(Qt.blue)
+				return blue
 			else:
 				return QVariant()
-			
 
 	def setData(self, index, value, role):
 		''' Gives another [value] to the item specified by [index] and for [role]
