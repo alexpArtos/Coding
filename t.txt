@@ -1,0 +1,125 @@
+Added new repo testRepo
+Loading file testRel.rpt
+Analysing path C:\Users\Alexandre\Documents\Ferramenta-Backup\Code
+Analysis: Path = C:\Users\Alexandre\Documents\Ferramenta-Backup\Code
+Subdirs = ['third-party', '__pycache__']
+Files=['classes.txt', 'controls.py', 'CRepo.py', 'CRepoItem.py', 'CRepoManager.py', 'draft.py', 'main.py', 'MasterRPT.idx', 't.txt', 'testCRepo.py', 'testRel.rpt', 'tests.py', 'utils.py', 'walk.rpt']
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\classes.txt
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\classes.txt: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\controls.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\controls.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\CRepo.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\CRepo.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\CRepoItem.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\CRepoItem.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\CRepoManager.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\CRepoManager.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\draft.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\draft.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\main.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\main.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\MasterRPT.idx
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\MasterRPT.idx: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\t.txt
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\t.txt: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\testCRepo.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\testCRepo.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\testRel.rpt
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\testRel.rpt: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\tests.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\tests.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\utils.py
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\utils.py: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\walk.rpt
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\walk.rpt: Exists = False, Free = False
+Analysis: Path = C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party
+Subdirs = ['python - How to get meta data with MMPython for images and video - Stack Overflow_files']
+Files=['mmpython-0.4.10.tar.gz', 'python - How to get meta data with MMPython for images and video - Stack Overflow.htm']
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\mmpython-0.4.10.tar.gz
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\mmpython-0.4.10.tar.gz: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow.htm
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow.htm: Exists = False, Free = False
+Analysis: Path = C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files
+Subdirs = ['how-to-get-meta-data-with-mmpython-for-images-and-video_data', 'how-to-get-meta-data-with-mmpython-for-images-and-video__002']
+Files=['0a57f95179393bac6724a502a72eece7.png', '0b2717587e3ca07f4d0890423ec4e69a.jpg', '1PBvA.jpg', '678ebc1fef384f2b8c51ead6b83ab365.jpg', 'adFeedback.css', 'adFeedback.js', 'ados', 'ados.js', 'all.css', 'analytics.js', 'beacon.js', 'clc.js', 'external-editor.js', 'full-anon.js', 'how-to-get-meta-data-with-mmpython-for-images-and-video.htm', 'how-to-get-meta-data-with-mmpython-for-images-and-video_002.htm', 'i.gif', 'i_002.gif', 'i_003.gif', 'jquery.js', 'markup.js', 'post-validation.js', 'prettify-full.js', 'quant.js', 'snippet-javascript.js', 'stub.js', 'wb-include.css']
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\0a57f95179393bac6724a502a72eece7.png
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\0a57f95179393bac6724a502a72eece7.png: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\0b2717587e3ca07f4d0890423ec4e69a.jpg
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\0b2717587e3ca07f4d0890423ec4e69a.jpg: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\1PBvA.jpg
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\1PBvA.jpg: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\678ebc1fef384f2b8c51ead6b83ab365.jpg
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\678ebc1fef384f2b8c51ead6b83ab365.jpg: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\adFeedback.css
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\adFeedback.css: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\adFeedback.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\adFeedback.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\ados
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\ados: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\ados.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\ados.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\all.css
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\all.css: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\analytics.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\analytics.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\beacon.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\beacon.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\clc.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\clc.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\external-editor.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\external-editor.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\full-anon.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\full-anon.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video.htm
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video.htm: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video_002.htm
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video_002.htm: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\i.gif
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\i.gif: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\i_002.gif
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\i_002.gif: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\i_003.gif
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\i_003.gif: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\jquery.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\jquery.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\markup.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\markup.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\post-validation.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\post-validation.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\prettify-full.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\prettify-full.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\quant.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\quant.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\snippet-javascript.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\snippet-javascript.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\stub.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\stub.js: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\wb-include.css
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\wb-include.css: Exists = False, Free = False
+Analysis: Path = C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video_data
+Subdirs = []
+Files=['dvbs_src.js']
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video_data\dvbs_src.js
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video_data\dvbs_src.js: Exists = False, Free = False
+Analysis: Path = C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video__002
+Subdirs = []
+Files=['bec6324899704b9eae9f75ca5632cc2a.jpg', 'img.gif']
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video__002\bec6324899704b9eae9f75ca5632cc2a.jpg
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video__002\bec6324899704b9eae9f75ca5632cc2a.jpg: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video__002\img.gif
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\third-party\python - How to get meta data with MMPython for images and video - Stack Overflow_files\how-to-get-meta-data-with-mmpython-for-images-and-video__002\img.gif: Exists = False, Free = False
+Analysis: Path = C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__
+Subdirs = []
+Files=['controls.cpython-35.pyc', 'CRepo.cpython-35.pyc', 'CRepoItem.cpython-35.pyc', 'CRepoManager.cpython-35.pyc', 'main.cpython-35.pyc', 'utils.cpython-35.pyc']
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\controls.cpython-35.pyc
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\controls.cpython-35.pyc: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\CRepo.cpython-35.pyc
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\CRepo.cpython-35.pyc: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\CRepoItem.cpython-35.pyc
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\CRepoItem.cpython-35.pyc: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\CRepoManager.cpython-35.pyc
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\CRepoManager.cpython-35.pyc: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\main.cpython-35.pyc
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\main.cpython-35.pyc: Exists = False, Free = False
+Testing file C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\utils.cpython-35.pyc
+C:\Users\Alexandre\Documents\Ferramenta-Backup\Code\__pycache__\utils.cpython-35.pyc: Exists = False, Free = False
