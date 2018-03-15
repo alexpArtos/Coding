@@ -1,0 +1,35 @@
+Name: Passing Cars
+Level: Easy
+Chapter: 3
+Complexity: O(n)
+https://codility.com/programmers/task/passing_cars/
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int N = A.Length;
+        
+        int countDir = 0;
+        int passes = 0;
+        int MAX = 1000000000;
+        
+        int dir = 0;
+        for (int i = 0; i < N; i++) {
+            if (A[i] == dir) {
+                countDir++;
+            } else {
+                passes += countDir;    
+                if (passes > MAX) return -1;
+            }
+        }
+        return passes;
+    }
+}

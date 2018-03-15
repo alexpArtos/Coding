@@ -1,0 +1,49 @@
+Name: Max Counters
+Level: Medium
+Chapter: 2
+Complexity: O(N+M)
+https://codility.com/programmers/task/max_counters/
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int[] solution(int N, int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int M = A.Length;
+        int[] counter = new int[N];
+        int[] last_updated = new int[N];
+        
+        int last_blanket = 0;
+        
+        int blanket = 0;
+        int max = 0;
+        
+        for (int i = 0; i < M; i++) {
+            if (A[i] == N+1) { // blanket operation
+                blanket = max;
+                last_blanket = i;                
+            } else { // single increment
+                int index = A[i] - 1;
+                int update;
+                if (last_updated[index] < last_blanket) { // value is not fresh
+                    update = blanket + 1;
+                } else {
+                    update = counter[index]+1;
+                }                            
+                if (update > max) max = update;
+                counter[index] = update;
+                last_updated[index] = i;
+            }
+        }
+        for (int i = 0; i < N; i++) {            
+            if (last_updated[i] < last_blanket) counter[i] = blanket;
+        }
+        return counter;
+    }
+}

@@ -1,0 +1,128 @@
+Name: Count Non Divisible
+Level: Medium
+Chapter: 9
+Complexity: O(n * log n)
+https://codility.com/programmers/task/count_non_divisible/
+
+using System;
+// you can also use other imports, for example:
+using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int[] solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        int n = A.Length;
+        int[] count = new int[2*n+1];
+        Dictionary<int,List<int> > divisors = new Dictionary<int,List<int> >();
+        
+        
+        int M = 0;
+        for (int i = 0; i < n; i++) {
+          int val = A[i];
+          M = Math.Max(M, val);
+          count[val]++;      
+          List<int> temp = new List<int>();
+          temp.Add(1);
+          if (val != 1) {
+            temp.Add(val);
+          }
+          divisors[val] = temp;
+        }        
+        
+        for (int divisor = 2; divisor * 2 <= M; divisor++) {
+            int multiple = divisor;
+            int factor = 1;
+            while (multiple <= M) {
+              if ( (divisors.ContainsKey(multiple)) && (!divisors[multiple].Contains(divisor)) ) {
+            	  divisors[multiple].Add(divisor);
+            	  if ( (factor != multiple) && (!divisors[multiple].Contains(factor)) ) {
+            	    divisors[multiple].Add(factor);
+            	  }
+              }
+              multiple += divisor;
+              factor++;
+            }	   
+        }
+
+        foreach(int val in divisors.Keys) {
+            List<int> temp = divisors[val];
+        }
+        
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+          int val = A[i];
+          result[i] = n;
+          foreach (int div in divisors[val]) {
+            result[i] -= count[div];
+          }
+        }        
+        return result;
+    }
+}
+
+==============================
+
+// this one is a bit faster
+
+
+using System;
+// you can also use other imports, for example:
+ using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int[] solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int n = A.Length;
+        int[] count = new int[2*n+1];
+        Dictionary<int,int> count_divs = new Dictionary<int,int>();
+        
+        int Max = 0;
+        for (int i = 0; i < n; i++) {        
+           int val = A[i];
+            count[val]++;
+            if (count[val] == 1) {
+                count_divs[val] = 0;
+            }
+            Max = Math.Max(Max, val);
+        }
+        
+        // at this stage, we have the maximum value in the array,
+        // we know how many times each value appears,
+        // we have a list of all distinct values
+        
+        // now we want to compute how many divisors each has.
+        // we only need to search divisors up to Sqrt(Max),
+        // since divisors larger than this will be paired with smaller ones
+                            
+        for (int divisor = 2; divisor * divisor <= Max; divisor++) {
+            int val = divisor * divisor; // divisor * k, for k < divisor, has been done in       
+            int factor = divisor;  // previous runs
+            while (val <= Max) {
+                if (count_divs.ContainsKey(val)) {  // val = divisor * factor
+                    count_divs[val] += count[divisor];
+                    if (factor != divisor) {
+                        count_divs[val] += count[factor];   
+                    }
+                }
+                factor++;
+                val += divisor;
+            }
+        }
+        
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {            
+            int val = A[i];
+            int count_1_n = count[1];            
+            if (val != 1) count_1_n += count[val];
+            result[i] = n - count_divs[val] - count_1_n;
+        }
+        return result;
+    }
+}

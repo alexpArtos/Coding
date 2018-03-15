@@ -1,0 +1,45 @@
+Name: Max Profit
+Level: Easy
+Chapter: 7
+Complexity: O(n)
+https://codility.com/programmers/task/max_profit/
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        
+        int n = A.Length;
+        if (n < 2) return 0;
+        
+        int highline = A[0];
+        int lowline = A[0];
+        int profit;
+        int best_profit = 0;
+                
+        for (int i = 1; i < n; i++) {
+            if (A[i] < lowline) {
+                profit = highline - lowline;
+                if (profit > best_profit) {
+                    best_profit = profit;   
+                }
+                lowline = highline = A[i];
+            } else {
+                if (A[i] > highline) {
+                    highline = A[i];   
+                }                    
+            }
+        }
+        profit = highline - lowline;
+        if (profit > best_profit) {
+            best_profit = profit;   
+        }
+        return best_profit;
+    }
+}

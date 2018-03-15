@@ -1,0 +1,27 @@
+Name: Distinct
+Level: Easy
+Chapter: 4
+Complexity: O(n log n)
+https://codility.com/programmers/task/distinct/
+
+using System;
+// you can also use other imports, for example:
+// using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        int n = A.Length;
+        if (n == 0) return 0;
+        Array.Sort(A);
+        int count = 0;
+        for (int i = 1; i < n; i++) {
+            if (A[i] > A[i-1]) count++;   
+        }
+        return count+1;
+    }
+}
+

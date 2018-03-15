@@ -1,0 +1,44 @@
+Name: Brackets
+Level: Easy
+Chapter: 5
+Complexity: O(n)
+https://codility.com/programmers/task/brackets/
+
+using System;
+// you can also use other imports, for example:
+using System.Collections.Generic;
+
+// you can use Console.WriteLine for debugging purposes, e.g.
+// Console.WriteLine("this is a debug message");
+
+class Solution {
+    public bool match (char previous, char next) {
+        if ( (previous == '(') && (next == ')') ) return true;
+        if ( (previous == '[') && (next == ']') ) return true;
+        if ( (previous == '{') && (next == '}') ) return true;
+        return false;
+    }
+    
+    public int solution(string S) {
+        // write your code in C# 5.0 with .NET 4.5 (Mono)
+        int n = S.Length;
+        if (n == 0) return 1;
+        Stack<char> s = new Stack<char>();
+        for (int i = 0; i < n; i++) {
+            char current = S[i];
+            if (s.Count == 0) {
+                s.Push(current);
+                continue;
+            }
+            
+            char peek = s.Peek();
+            if (match(peek, current)) {
+                s.Pop();   
+            } else {
+                s.Push(current);   
+            }
+        }
+        if (s.Count == 0) return 1;
+        return 0;
+    }
+}
