@@ -3,26 +3,30 @@
 
 class Stats:
 	@staticmethod
-	def mean(vector):
-		return sum(vector)/len(vector)
+	def mean(points):
+		"""Returns the arithmetic mean of points
+		"""
+		return sum(points)/len(points)
 	
-	@staticmethod
-	def median(vector):
-		N = len(vector)
+	@staticmethod	
+	def median(points):
+		"""Returns the median of points
+		"""
+		N = len(points)
 		if (N%2 == 0):			
-			leftOfCentre = vector[N//2-1]
-			rightOfCentre = vector[N//2]
+			leftOfCentre = points[N//2-1]
+			rightOfCentre = points[N//2]
 			return (leftOfCentre + rightOfCentre) / 2
 		else:
-			return vector[N//2]
+			return points[N//2]
 
 	@staticmethod
-	def mode(vector):
-		"""Returns any modal value of this vector
+	def mode(points):
+		"""Returns any modal value of this points
 		"""
 		count = {}
 		max = None
-		for item in vector:
+		for item in points:
 			if item in count:
 				count[item] = count[item] + 1
 			else:
@@ -34,3 +38,11 @@ class Stats:
 					max = (item, count[item])
 		return max[0]
 			
+	@staticmethod
+	def weightedMean(points, weights):
+		"""Returns the weighted mean of points using weights
+		"""
+		weightedSum = sum([a*b for a,b in zip(points, weights)])
+		totalWeight = sum(weights)
+		return weightedSum / totalWeight
+		
