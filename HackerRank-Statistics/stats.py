@@ -45,4 +45,34 @@ class Stats:
 		weightedSum = sum([a*b for a,b in zip(points, weights)])
 		totalWeight = sum(weights)
 		return weightedSum / totalWeight
+
+	@staticmethod
+	def lowerHalf(vector):
+		N = len(vector)
+		if (N%2 == 0):
+			return vector[0:N//2]
+		else:
+			return vector[0:N//2]
+
+	@staticmethod
+	def upperHalf(vector):
+		N = len(vector)
+		if (N%2 == 0):
+			return vector[N//2:]
+		else:
+			return vector[N//2+1:]
+		
+	@staticmethod
+	def Q1(vector):
+		lower = Stats.lowerHalf(vector)
+		return Stats.median(lower)
+		
+	@staticmethod	
+	def Q2(vector):
+		return Stats.median(vector)
+		
+	@staticmethod
+	def Q3(vector):
+		upper = Stats.upperHalf(vector)
+		return Stats.median(upper)
 		
