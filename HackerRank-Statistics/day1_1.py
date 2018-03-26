@@ -7,12 +7,12 @@ from stats import Stats
 input()
 tokens = input().split()
 N = len(tokens)
-numbers = list(map(int, tokens))
-numbers.sort()
+points = list(map(int, tokens))
+points.sort()
 
-Q1 = Stats.Q1(numbers)
-Q2 = Stats.Q2(numbers)
-Q3 = Stats.Q3(numbers)
+Q1 = Stats.Q1(points)
+Q2 = Stats.Q2(points)
+Q3 = Stats.Q3(points)
 
 print(Utils.scale(Q1,0))
 print(Utils.scale(Q2,0))
