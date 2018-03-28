@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+from functools import reduce
+import math
+
 class Stats:
 	@staticmethod
 	def mean(points):
@@ -75,4 +78,19 @@ class Stats:
 	def Q3(vector):
 		upper = Stats.upperHalf(vector)
 		return Stats.median(upper)
+		
+	@staticmethod
+	def expandPopulation(points, weights):
+		return reduce(
+			  lambda a,l: a + l, 
+			  [[x]*f for x,f in zip(points, weights)], 
+			  []
+			 )
+		
+	@staticmethod
+	def standardDeviation(points):
+		m = Stats.mean(points)
+		N = len(points)
+		s = sum([(x - m)**2 for x in points])
+		return math.sqrt(s / N)
 		
