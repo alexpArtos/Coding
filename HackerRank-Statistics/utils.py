@@ -9,3 +9,4 @@ class Utils:
 		formatMask = "{:0." + str(scale) + "f}"
 		return formatMask.format(n)
 				
+	

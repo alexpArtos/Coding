@@ -93,4 +93,51 @@ class Stats:
 		N = len(points)
 		s = sum([(x - m)**2 for x in points])
 		return math.sqrt(s / N)
+	
+	@staticmethod
+	def binomDistCumulative(maxX,n,p):
+		binom = 1
+		pSuc = 1
+		pFail = (1-p)**n
+		prob = 0
+		for x in range(0,maxX+1, 1):
+			prob = prob + binom * pSuc * pFail
+			pSuc = pSuc * p
+			pFail = pFail / (1-p)
+			binom = binom * (n-x) / (x+1)
+		return prob	
+		
+	@staticmethod
+	def geomDist(p,n):
+		q = 1-p
+		return q**(n-1) * p
+		
+	@staticmethod
+	def geomDistCumulative(p,n):
+		q = 1-p
+		return reduce(lambda a,x:
+				           a + Stats.geomDist(p,x),					   
+					   range(1,n+1),
+					   0)
+
+	@staticmethod
+	def poissonDist(l,k):
+		return math.exp(-l) * l**k / math.factorial(k)
+
+	@staticmethod
+	def poissonSquareExpectedValue(l):
+		return l**2 + l
+		
+		
+	@staticmethod
+	def poissonDistCumulative(l,k):
+		return reduce(lambda a,x:
+				           a + Stats.poissonDist(l,x),
+					   range(0,n+1),
+					   0)
+
+	@staticmethod
+	def normDistCumulative(mean, stdDev, x):
+		return 1/2 * (1 + math.erf((x - mean) / (stdDev * math.sqrt(2))))
+	
 		
