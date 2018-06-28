@@ -9,4 +9,16 @@ class Utils:
 		formatMask = "{:0." + str(scale) + "f}"
 		return formatMask.format(n)
 				
+	@staticmethod
+	def readFloatsLine(message):
+		tokens = input(message).split(" ")
+		floatTuples = [Utils.tryParseFloat(s) for s in tokens]
+		return [value for (value, valid) in floatTuples if valid]	
+		
+	@staticmethod
+	def tryParseFloat(s):
+		try:
+			return(float(s), True)
+		except:
+			return(None, False)
 	

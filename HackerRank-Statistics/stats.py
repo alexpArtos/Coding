@@ -140,4 +140,27 @@ class Stats:
 	def normDistCumulative(mean, stdDev, x):
 		return 1/2 * (1 + math.erf((x - mean) / (stdDev * math.sqrt(2))))
 	
+	@staticmethod	
+	def covariance(X,Y):
+		# this implementation is O(n)
+		# the alternative presented in the Tutorial is O(n^2)
+		n = len(X)
+		mx = Stats.mean(X)
+		my = Stats.mean(Y)
+		return 1/n * sum([(x - mx) * (y - my) for x,y in zip(X,Y)])
+
+	@staticmethod
+	def PearsonCC(X,Y):
+		return Stats.covariance(X,Y) / (Stats.standardDeviation(X) * Stats.standardDeviation(Y))
+		
+	@staticmethod
+	def Rank(X):
+		rankSet = sorted(set(X))
+		return [rankSet.index(x)+1 for x in X]
+		
+	@staticmethod
+	def SpearmanRCC(X,Y):
+		rankX = Stats.Rank(X)
+		rankY = Stats.Rank(Y)
+		return Stats.PearsonCC(rankX, rankY)
 		
